@@ -38,6 +38,7 @@ START_FROM = int(os.environ.get("START_FROM", 0))
 OUTPUT_EXCEL = os.environ.get("OUTPUT_EXCEL", "/Users/apple/Downloads/shell/注册结果.xlsx")
 LOG_FILE = os.environ.get("LOG_FILE", "/Users/apple/Downloads/shell/register_log.txt")
 NODES_OUTPUT_FILE = os.environ.get("NODES_OUTPUT_FILE", "/Users/apple/Downloads/shell/all_nodes.txt")
+MAX_WORKERS = int(os.environ.get("MAX_WORKERS", 8))
 CLASH_OUTPUT_FILE = os.environ.get("CLASH_OUTPUT_FILE", "/Users/apple/Downloads/shell/clash_config.yaml")
 
 # 线程锁，确保多线程下日志和数据写入不乱序
@@ -1321,75 +1322,76 @@ def generate_plan_analysis(all_plans_data):
 
 def generate_clash_config(all_nodes_text):
     """
-    将提取的所有节点链接转换为 Clash 配置文件
+    将提取的所有节点链接转换为 Clash 配置文件 (增加命名唯一化逻辑)
     """
     proxies = []
-    lines = (all_nodes_text or "").split('\n')
+    seen_names = set()
+    # 先做一次全局去重
+    lines = list(set((all_nodes_text or "").split('\n')))
     
-    # 简单的解析逻辑，将 vmess/vless/ss 转换为 Clash 字典
-    # 注意：这里仅作基础转换示例
     for line in lines:
         line = line.strip()
         if not line or "://" not in line:
             continue
         
         try:
+            node = None
             if line.startswith("vmess://"):
-                # 简单解析 vmess (Base64)
                 data_b64 = line[8:]
-                # 补足 padding
                 data_b64 += "=" * ((4 - len(data_b64) % 4) % 4)
                 data = base64.b64decode(data_b64).decode('utf-8', errors='ignore')
                 js = json.loads(data)
                 node = {
-                    "name": js.get("ps", f"vmess-{random.randint(100,999)}"),
+                    "name": js.get("ps", "vmess"),
                     "type": "vmess",
                     "server": js.get("add"),
                     "port": int(js.get("port", 443)),
                     "uuid": js.get("id"),
                     "alterId": int(js.get("aid", 0)),
                     "cipher": "auto",
-                    "udp": True,
                     "tls": True if js.get("tls") == "tls" else False,
-                    "skip-cert-verify": True,
                     "network": js.get("net", "tcp")
                 }
                 if js.get("net") == "ws":
                     node["ws-opts"] = {"path": js.get("path", "/"), "headers": {"Host": js.get("host", js.get("add"))}}
-                proxies.append(node)
                 
             elif line.startswith("vless://"):
-                # 简单解析 vless
                 parsed = urlparse(line)
                 user_info = parsed.netloc.split("@")
                 uuid = user_info[0]
                 server_port = user_info[1].split(":")
                 params = parse_qs(parsed.query)
                 node = {
-                    "name": re.sub(r'[^\w\s-]', '', urllib.parse.unquote(parsed.fragment)) if parsed.fragment else f"vless-{random.randint(100,999)}",
+                    "name": re.sub(r'[^\w\s-]', '', urllib.parse.unquote(parsed.fragment)) if parsed.fragment else "vless",
                     "type": "vless",
                     "server": server_port[0],
                     "port": int(server_port[1]),
                     "uuid": uuid,
                     "cipher": "none",
                     "tls": True if params.get("security", [""])[0] in ["tls", "reality"] else False,
-                    "udp": True,
-                    "skip-cert-verify": True,
                     "network": params.get("type", ["tcp"])[0]
                 }
-                proxies.append(node)
             
             elif line.startswith("ss://"):
-                # 简单解析 ss (处理带 fragment 的情况)
                 parsed = urlparse(line)
                 node = {
-                    "name": urllib.parse.unquote(parsed.fragment) if parsed.fragment else f"ss-{random.randint(100,999)}",
+                    "name": urllib.parse.unquote(parsed.fragment) if parsed.fragment else "ss",
                     "type": "ss",
                     "server": parsed.hostname,
                     "port": parsed.port,
-                    "cipher": "aes-256-gcm", # 默认占位
-                    "password": "password"    # 默认占位
+                    "cipher": "aes-256-gcm",
+                    "password": "password"
                 }
+
+            if node:
+                # 确保名称唯一性，防止 Clash 启动报错
+                name = node["name"]
+                counter = 1
+                while name in seen_names:
+                    name = f"{node['name']} ({counter})"
+                    counter += 1
+                node["name"] = name
+                seen_names.add(name)
                 proxies.append(node)
         except:
             continue
@@ -1761,9 +1763,9 @@ def main():
             log(f"  线程处理异常: {e}")
             return ""
 
-    log(f"[*] 启动多线程引擎 (并发数: 8)...")
+    log(f"[*] 启动多线程引擎 (并发数: {MAX_WORKERS})...")
     all_subscribe_urls = []
-    with ThreadPoolExecutor(max_workers=8) as executor:
+    with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
         futures = [executor.submit(task_wrapper, i, site) for i, site in enumerate(sites)]
         for future in as_completed(futures):
             url = future.result()
@@ -1779,11 +1781,27 @@ def main():
     # 生成套餐报表
     generate_plan_analysis(all_plans_data)
     
-    # 生成 Clash 订阅汇总配置
+    # 生成 Clash 订阅汇总配置 (并进行全局节点去重)
     all_nodes_collected = ""
     if os.path.exists(NODES_OUTPUT_FILE):
         with open(NODES_OUTPUT_FILE, "r", encoding="utf-8") as f:
-            all_nodes_collected = f.read()
+            lines = f.readlines()
+        
+        # 对 all_nodes.txt 本身进行去重写回
+        unique_nodes = []
+        seen_nodes = set()
+        for l in lines:
+            l_strip = l.strip()
+            if "://" in l_strip and l_strip not in seen_nodes:
+                unique_nodes.append(l_strip)
+                seen_nodes.add(l_strip)
+            elif l_strip.startswith("#"):
+                unique_nodes.append(l_strip) # 保留注释
+        
+        all_nodes_collected = "\n".join(unique_nodes)
+        with open(NODES_OUTPUT_FILE, "w", encoding="utf-8") as f:
+            f.write(all_nodes_collected + "\n")
+            
     generate_clash_config(all_nodes_collected)
 
     log("\n" + "=" * 60)

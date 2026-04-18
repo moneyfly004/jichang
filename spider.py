@@ -8,6 +8,7 @@ from urllib.parse import urlparse
 
 # 定义抓取配置和路径
 CSV_PATH = os.environ.get("CSV_PATH", "/Users/apple/Downloads/shell/airports.csv")
+PROXY = os.environ.get("PROXY", "") # 例如 http://127.0.0.1:7890
 
 # ================= 抓取来源配置 =================
 # Telegram 免签网页版列表 (找一些专门分享机场的开放频道)
@@ -118,8 +119,9 @@ def scrape_telegram(channel):
     url = f"https://t.me/s/{channel}"
     headers = get_random_headers()
     print(f"[*] 侦听 Telegram 频道: {channel}...")
+    proxies = {"http": PROXY, "https": PROXY} if PROXY else None
     try:
-        r = requests.get(url, headers=headers, timeout=10)
+        r = requests.get(url, headers=headers, proxies=proxies, timeout=10)
         if r.status_code == 200:
             urls = extract_valid_urls(r.text)
             print(f"  -> {channel} 提取到有效外链: {len(urls)} 个。")
@@ -131,8 +133,9 @@ def scrape_telegram(channel):
 def scrape_github(raw_url):
     headers = get_random_headers()
     print(f"[*] 侦听 Github 资源库: {raw_url.split('/')[-1]}...")
+    proxies = {"http": PROXY, "https": PROXY} if PROXY else None
     try:
-        r = requests.get(raw_url, headers=headers, timeout=10)
+        r = requests.get(raw_url, headers=headers, proxies=proxies, timeout=10)
         if r.status_code == 200:
             urls = extract_valid_urls(r.text)
             print(f"  -> Github端 提取到有效外链: {len(urls)} 个。")
