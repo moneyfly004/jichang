@@ -16,7 +16,12 @@ TG_CHANNELS = [
     "v2rayshare",
     "clash_share",
     "mianfeijichang",
-    "sspjcv2b"
+    "sspjcv2b",
+    "jichang_list",
+    "oneclickvpnkeys",
+    "freeyule",
+    "entryNET",
+    "v2Line"
 ]
 
 # GitHub 上经常汇总机场的开源 README.md 或接口
