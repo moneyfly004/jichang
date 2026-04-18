@@ -1019,6 +1019,64 @@ def fetch_and_save_nodes(sub_url, site_name="未知"):
     """请求订阅链接并提取节点保存到本地"""
     if not sub_url:
         return 0
+
+def convert_clash_proxy_to_uri(proxy):
+    """
+    将 Clash 格式的代理字典逆向转换为标准 URI 链接
+    """
+    try:
+        p_type = str(proxy.get("type", "")).lower()
+        name = urllib.parse.quote(proxy.get("name", "node"))
+        server = proxy.get("server", "")
+        port = proxy.get("port", "")
+        
+        if p_type == "vmess":
+            # 还原 vmess://
+            js = {
+                "v": "2", "ps": proxy.get("name"), "add": server, "port": str(port),
+                "id": proxy.get("uuid"), "aid": str(proxy.get("alterId", 0)),
+                "net": proxy.get("network", "tcp"), "type": "none",
+                "host": proxy.get("ws-opts", {}).get("headers", {}).get("Host", ""),
+                "path": proxy.get("ws-opts", {}).get("path", ""),
+                "tls": "tls" if proxy.get("tls") else ""
+            }
+            content = base64.b64encode(json.dumps(js).encode('utf-8')).decode('utf-8')
+            return f"vmess://{content}"
+            
+        elif p_type == "vless":
+            # 还原 vless://
+            uuid = proxy.get("uuid")
+            params = []
+            if proxy.get("tls"):
+                params.append("security=tls")
+            if proxy.get("network"):
+                params.append(f"type={proxy.get('network')}")
+            if proxy.get("ws-opts"):
+                params.append(f"path={urllib.parse.quote(proxy['ws-opts'].get('path', '/'))}")
+            
+            query = "&".join(params)
+            return f"vless://{uuid}@{server}:{port}?{query}#{name}"
+            
+        elif p_type == "ss":
+            # 还原 ss://
+            method = proxy.get("cipher", "aes-256-gcm")
+            password = proxy.get("password", "")
+            # SS 许多格式是 ss://BASE64(method:password)@ip:port#name
+            user_info = base64.b64encode(f"{method}:{password}".encode('utf-8')).decode('utf-8')
+            return f"ss://{user_info}@{server}:{port}#{name}"
+            
+        elif p_type == "trojan":
+            # 还原 trojan://
+            password = proxy.get("password", "")
+            return f"trojan://{password}@{server}:{port}#{name}"
+            
+    except:
+        pass
+    return None
+
+def extract_and_save_nodes(sub_url, site_name):
+    if not sub_url:
+        return 0
     try:
         # 使用 v2rayN UA 获取 Base64 原数据
         h = {"User-Agent": "v2rayN/6.23"}
@@ -1029,21 +1087,41 @@ def fetch_and_save_nodes(sub_url, site_name="未知"):
             return 0
             
         nodes = []
+        is_yaml = False
+        
+        # 1. 尝试直接作为 YAML/Clash 配置解析
         try:
-            missing_padding = len(text) % 4
-            text_padded = text + '=' * ((4 - missing_padding) % 4)
-            decoded = base64.b64decode(text_padded).decode('utf-8')
-            lines = decoded.splitlines()
+            # 排除简单的 Base64，如果是 YAML 通常包含特定的 keywords
+            if "proxies:" in text or "proxy-groups:" in text:
+                data = yaml.safe_load(text)
+                if isinstance(data, dict) and "proxies" in data:
+                    for p in data["proxies"]:
+                        uri = convert_clash_proxy_to_uri(p)
+                        if uri:
+                            nodes.append(uri)
+                    is_yaml = True
         except:
-            # 或者非base64纯文本
-            lines = text.splitlines()
+            pass
             
-        # 提取常见的节点前缀
-        supported_schemes = ("vmess://", "vless://", "ss://", "ssr://", "trojan://", "hysteria", "tuic")
-        for line in lines:
-            line = line.strip()
-            if line.startswith(supported_schemes):
-                nodes.append(line)
+        if not is_yaml:
+            # 2. 尝试 Base64 解码 (传统 V2Ray/SSR 格式)
+            try:
+                # 预处理：去除可能的换行并补齐 padding
+                cleaned_text = text.replace("\n", "").replace("\r", "")
+                missing_padding = len(cleaned_text) % 4
+                text_padded = cleaned_text + '=' * ((4 - missing_padding) % 4)
+                decoded = base64.b64decode(text_padded).decode('utf-8')
+                lines = decoded.splitlines()
+            except:
+                # 3. 或者非 base64 纯文本一行一个 URI
+                lines = text.splitlines()
+            
+            # 提取常见的节点前缀
+            supported_schemes = ("vmess://", "vless://", "ss://", "ssr://", "trojan://", "hysteria", "tuic")
+            for line in lines:
+                line = line.strip()
+                if line.startswith(supported_schemes):
+                    nodes.append(line)
         
         if nodes:
             with log_lock:  # 使用统一锁防止并发写入乱序
