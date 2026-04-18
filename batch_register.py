@@ -1069,16 +1069,24 @@ def convert_clash_proxy_to_uri(proxy):
         pass
     return None
 
-def fetch_and_save_nodes(sub_url, site_name):
+def fetch_and_save_nodes(sub_url, site_name, session=None):
     if not sub_url:
         return 0
     try:
         # 使用 v2rayN UA 获取 Base64 原数据
         h = {"User-Agent": "v2rayN/6.23"}
-        r = requests.get(sub_url, headers=h, timeout=10)
+        if session:
+            r = session.get(sub_url, headers=h, timeout=10)
+        else:
+            r = requests.get(sub_url, headers=h, timeout=10)
+            
         text = r.text.strip()
         if not text:
-            log(f"  获取订阅连接 [{sub_url}] 失败: 服务端返回空内容")
+            log(f"  获取订阅内容为空 (HTTP {r.status_code})")
+            return 0
+            
+        if "login" in text.lower() and "<html" in text.lower():
+            log(f"  订阅连接返回了登录页，可能需要特定 Cookie 或 Token")
             return 0
             
         nodes = []
@@ -1596,7 +1604,7 @@ def process_site(row_num, name, url, panel_type_hint):
             result["subscribe_url"] = sub["subscribe_url"]
             result["subscribe_domain"] = sub["subscribe_domain"]
             log(f"  订阅域名: {sub['subscribe_domain']}")
-            fetch_and_save_nodes(sub["subscribe_url"], name)
+            fetch_and_save_nodes(sub["subscribe_url"], name, session)
         result["plans"] = fetch_plans(base_url, headers, session, token, panel_type)
         return result
 
@@ -1694,7 +1702,7 @@ def process_site(row_num, name, url, panel_type_hint):
         if sub:
             result["subscribe_url"] = sub["subscribe_url"]
             result["subscribe_domain"] = sub["subscribe_domain"]
-            fetch_and_save_nodes(sub["subscribe_url"], name)
+            fetch_and_save_nodes(sub["subscribe_url"], name, session)
         result["plans"] = fetch_plans(base_url, headers, session, reg_result.get("token"), panel_type)
         return result
 
