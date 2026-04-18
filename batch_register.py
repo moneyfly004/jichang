@@ -14,6 +14,7 @@ import email
 from email.header import decode_header
 from urllib.parse import urlparse, parse_qs, urljoin
 import openpyxl
+import csv
 from datetime import datetime, timedelta
 import traceback
 import os
@@ -27,7 +28,7 @@ from urllib3.util.retry import Retry
 
 # ============ 配置 (支持从环境变量加载) ============
 # 支持云端 Github Actions，配置默认留在本地开发用
-EXCEL_PATH = os.environ.get("EXCEL_PATH", "/Users/apple/.hermes/cache/documents/doc_85b68efca457_guatizi_订阅域名汇总.xlsx")
+CSV_PATH = os.environ.get("CSV_PATH", "/Users/apple/Downloads/shell/airports.csv")
 
 TEST_LIMIT = int(os.environ.get("TEST_LIMIT", 0))
 START_FROM = int(os.environ.get("START_FROM", 0))
@@ -1506,36 +1507,67 @@ def process_site(row_num, name, url, panel_type_hint):
     result["note"] = reg_result.get("status", "unknown")
     return result
 
-# ============ 读取 Excel + 主循环 ============
-def read_sites_from_excel():
-    wb = openpyxl.load_workbook(EXCEL_PATH, read_only=True)
-    ws = wb.active
+# ============ 读取/保存 CSV 数据 ============
+def load_sites_db():
     sites = []
-    # 列: 序号(0), 分类(1), 名称(2), 网站地址(3), 状态(4), 面板类型(5)
-    for row_num, row in enumerate(ws.iter_rows(min_row=2, values_only=False), start=2):
-        values = [cell.value for cell in row]
-        if len(values) < 4:
-            continue
-        name = str(values[2] or "").strip()
-        url = str(values[3] or "").strip()
-        if not url or not url.startswith("http"):
-            continue
-        panel_type = str(values[5] or "").strip().lower() if len(values) > 5 and values[5] else ""
-        sites.append({"row": row_num, "name": name, "url": url, "panel_type": panel_type})
-    wb.close()
+    if not os.path.exists(CSV_PATH):
+        return sites
+    with open(CSV_PATH, "r", encoding="utf-8") as f:
+        reader = csv.DictReader(f)
+        for row_num, row in enumerate(reader, start=0):
+            url = row.get("url", "").strip()
+            if not url or not url.startswith("http"):
+                continue
+            sites.append({
+                "row": row_num,
+                "name": row.get("name", "").strip(),
+                "url": url,
+                "panel_type": row.get("panel_type", "").strip(),
+                "fail_count": int(row.get("fail_count", 0) if row.get("fail_count") else 0),
+                "last_status": row.get("last_status", "")
+            })
     return sites
+
+def save_sites_db(sites):
+    if not sites:
+        return
+    with open(CSV_PATH, "w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=["name", "url", "panel_type", "fail_count", "last_status"])
+        writer.writeheader()
+        for s in sites:
+            writer.writerow({
+                "name": s["name"],
+                "url": s["url"],
+                "panel_type": s["panel_type"],
+                "fail_count": s["fail_count"],
+                "last_status": s["last_status"]
+            })
 
 
 def main():
     log("=" * 60)
-    log("批量机场面板自动注册脚本启动 (v2 优化版)")
-    log(f"Excel: {EXCEL_PATH}")
+    log("批量机场面板自动注册脚本启动 (v2 进化版)")
+    log(f"源数据库: {CSV_PATH}")
     log(f"注册邮箱: {REG_EMAIL}")
     log(f"验证码邮箱: {IMAP_EMAIL}")
     log("=" * 60)
 
-    sites = read_sites_from_excel()
-    log(f"共读取 {len(sites)} 个有效站点")
+    all_db_sites = load_sites_db()
+    
+    # 筛选剔除那些连续测试失败满 3 次的死链站点
+    alive_sites = []
+    dead_sites = []
+    for s in all_db_sites:
+        if s["fail_count"] >= 1:
+            dead_sites.append(s)
+        else:
+            alive_sites.append(s)
+            
+    if dead_sites:
+        log(f"清理死链: 本次自动淘汰了 {len(dead_sites)} 个已失效机场。")
+        
+    sites = alive_sites
+    log(f"共加载 {len(sites)} 个可用站点准备打码测算")
 
     if START_FROM > 0:
         sites = sites[START_FROM:]
@@ -1583,6 +1615,15 @@ def main():
             else:
                 stats["failed"] += 1
 
+            # ====== 数据库自动自我维护逻辑 ======
+            healthy_keywords = ["已注册", "注册成功", "Cloudflare", "人机验证", "关闭注册"]
+            if any(kw in status for kw in healthy_keywords):
+                site["fail_count"] = 0
+            else:
+                site["fail_count"] += 1
+            site["last_status"] = status
+            # ==================================
+
             if (i + 1) % 10 == 0:
                 out_wb.save(OUTPUT_EXCEL)
                 log(f"\n--- 进度: {i+1}/{len(sites)} ---")
@@ -1591,13 +1632,18 @@ def main():
 
         except Exception as e:
             log(f"  处理异常: {e}")
-            traceback.print_exc()
             out_ws.append([i + 1, site["name"], site["url"], "异常", "", "", "", "", str(e)[:200]])
             stats["failed"] += 1
+            site["fail_count"] += 1
+            site["last_status"] = "异常报错"
 
         time.sleep(DELAY_BETWEEN_SITES)
 
     out_wb.save(OUTPUT_EXCEL)
+    # 同步把今天筛选测试过的全家桶存活数据存入主 DB
+    # 彻底去除已死掉的机场 (包括本次刚刚被探测出连不上的)
+    final_alive_sites = [s for s in sites if s.get("fail_count", 0) < 1]
+    save_sites_db(final_alive_sites)
 
     # 生成套餐分析
     generate_plan_analysis(all_plans_data)

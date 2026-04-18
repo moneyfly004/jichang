@@ -23,15 +23,20 @@ jobs:
       - name: Install Dependencies
         run: pip install -r requirements.txt
         
-      - name: Check Input Excel
-        # 确保包含种子域名的表格在仓库根目录
+      - name: Check Input Database
+        # 确保数据库文件存在
         run: |
-          if [ -f "doc_85b68efca457_guatizi_订阅域名汇总.xlsx" ]; then
-            echo "✅ 成功找到基础域名库 Excel"
+          if [ -f "airports.csv" ]; then
+            echo "✅ 成功找到基础域名库 CSV"
           else
             echo "❌ 未找到基础域名库，请确保它存在于代码仓库根目录"
             exit 1
           fi
+
+      - name: Run Spider (自我进化搜搜引擎)
+        env:
+          CSV_PATH: "./airports.csv"
+        run: python spider.py
           
       - name: Run Auto Registration Script
         env:
@@ -41,8 +46,7 @@ jobs:
           IMAP_EMAIL: ${{ secrets.IMAP_EMAIL }}
           IMAP_PASSWORD: ${{ secrets.IMAP_PASSWORD }}
           
-          # 重定向生成文件的挂载点
-          EXCEL_PATH: "./doc_85b68efca457_guatizi_订阅域名汇总.xlsx"
+          CSV_PATH: "./airports.csv"
           OUTPUT_EXCEL: "./注册结果.xlsx"
           LOG_FILE: "./register_log.txt"
           NODES_OUTPUT_FILE: "./all_nodes.txt"
@@ -52,10 +56,10 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add 注册结果.xlsx 套餐分析.xlsx register_log.txt all_nodes.txt || true
+          git add airports.csv 注册结果.xlsx 套餐分析.xlsx register_log.txt all_nodes.txt || true
           # 仅在有改动时才提交
           if ! git diff --staged --quiet; then
-            git commit -m "Auto-update: Registration results and nodes [skip ci]"
+            git commit -m "Auto-update: Evolution, Results and Nodes [skip ci]"
             git push
           else
             echo "没有文件变动，跳过提交"
@@ -67,6 +71,7 @@ jobs:
         with:
           name: Auto-Register-Results
           path: |
+            airports.csv
             注册结果.xlsx
             套餐分析.xlsx
             register_log.txt

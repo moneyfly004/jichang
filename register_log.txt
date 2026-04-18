@@ -435,3 +435,1133 @@
 [2026-04-18 11:46:35]   面板类型: unknown
 [2026-04-18 11:46:37]   登录结果: no_api
 [2026-04-18 11:46:37]   注册非JSON: /api/v1/passport/auth/register -> status=404
+[2026-04-18 11:46:37]   注册非JSON: /auth/register -> status=404
+[2026-04-18 11:46:38]   注册非JSON: /api/v2/passport/auth/register -> status=404
+[2026-04-18 11:46:38]   注册结果: no_api
+[2026-04-18 11:46:39] 
+============================================================
+[2026-04-18 11:46:39] 处理 [47] 云图小镇 - https://20260223.dev.tarolink.top
+[2026-04-18 11:46:39]   邀请码: H6q1
+[2026-04-18 11:46:49]   站点不可达，跳过
+[2026-04-18 11:46:50] 
+============================================================
+[2026-04-18 11:46:50] 处理 [48] iKuuu VPN - https://ikuuu.org
+[2026-04-18 11:46:52]   📧 临时邮箱: reviere62f02c@zu.accesswiki.net (via tempmail_lol)
+[2026-04-18 11:46:52]   使用邮箱: reviere62f02c@zu.accesswiki.net (tempmail_lol)
+[2026-04-18 11:46:52]   面板类型: unknown
+[2026-04-18 11:46:53]   登录结果: no_api
+[2026-04-18 11:46:53]   注册非JSON: /api/v1/passport/auth/register -> status=404
+[2026-04-18 11:46:53]   注册非JSON: /auth/register -> status=200
+[2026-04-18 11:46:54]   注册非JSON: /api/v2/passport/auth/register -> status=404
+[2026-04-18 11:46:54]   注册结果: no_api
+[2026-04-18 11:46:55] 
+============================================================
+[2026-04-18 11:46:55] 处理 [49] 赔钱机场 - https://xn--mes358aby2apfg.com
+[2026-04-18 11:46:55]   邀请码: vYU0rYqI
+[2026-04-18 11:46:56]   📧 临时邮箱: chas62f030@bb.accesswiki.net (via tempmail_lol)
+[2026-04-18 11:46:56]   使用邮箱: chas62f030@bb.accesswiki.net (tempmail_lol)
+[2026-04-18 11:46:56]   面板类型: unknown
+[2026-04-18 11:47:01]   登录结果: no_api
+[2026-04-18 11:47:02]   注册非JSON: /api/v1/passport/auth/register -> status=404
+[2026-04-18 11:47:02]   注册非JSON: /auth/register -> status=404
+[2026-04-18 11:47:02]   注册非JSON: /api/v2/passport/auth/register -> status=404
+[2026-04-18 11:47:02]   注册结果: no_api
+[2026-04-18 11:47:04] 
+============================================================
+[2026-04-18 11:47:04] 处理 [50] 大机场 Big Airport - https://xn--mesr8b36x.net
+[2026-04-18 11:47:04]   邀请码: ZArZYgxI
+[2026-04-18 11:47:05]   V2Board 配置: 需邮箱验证=1, 需邀请码=0
+[2026-04-18 11:47:05]   站点限制邮箱后缀: ["['gmail.com'", "'qq.com'", "'163.com'", "'126.com'", "'outlook.com'", "'hotmail.com'", "'icloud.com'", "'foxmail.com']"]，使用 Gmail
+[2026-04-18 11:47:05]   使用邮箱: moneyflysubssr@gmail.com (gmail)
+[2026-04-18 11:47:05]   面板类型: v2board
+[2026-04-18 11:47:05]   登录返回: /api/v1/passport/auth/login -> {"message": "邮箱或密码错误"}
+[2026-04-18 11:47:05]   登录结果: login_fail
+[2026-04-18 11:47:05]   注册结果: need_email_code
+[2026-04-18 11:47:05]   需要邮件验证码，启动验证码流程...
+[2026-04-18 11:47:06]   发送验证码响应: {"message": "验证码有误"}
+[2026-04-18 11:47:06]   发送验证码响应: {"message": ""}
+[2026-04-18 11:47:07] 
+============================================================
+[2026-04-18 11:47:07] 处理 [51] 奈思云 - https://2nss.com
+[2026-04-18 11:47:07]   邀请码: HoWU9UzZ
+[2026-04-18 11:47:08]   📧 临时邮箱: andy62f03c@1e.shopsprint.org (via tempmail_lol)
+[2026-04-18 11:47:08]   使用邮箱: andy62f03c@1e.shopsprint.org (tempmail_lol)
+[2026-04-18 11:47:09]   面板类型: v2board
+[2026-04-18 11:47:10]   登录结果: no_api
+[2026-04-18 11:47:10]   注册非JSON: /api/v1/passport/auth/register -> status=404
+[2026-04-18 11:47:10]   注册非JSON: /auth/register -> status=404
+[2026-04-18 11:47:10]   注册结果: no_api
+[2026-04-18 11:47:10] 
+--- 进度: 50/380 ---
+[2026-04-18 11:47:10]   成功: 0, 已注册: 4, CF拦截: 13, 跳过: 29, 失败: 4
+[2026-04-18 11:47:11] 
+============================================================
+[2026-04-18 11:47:11] 处理 [52] 速子云 - https://get.tachban.xyz
+[2026-04-18 11:47:11]   邀请码: ov17PIi1
+[2026-04-18 11:47:12]   📧 临时邮箱: folger62f040@4z.hush2u.com (via tempmail_lol)
+[2026-04-18 11:47:12]   使用邮箱: folger62f040@4z.hush2u.com (tempmail_lol)
+[2026-04-18 11:47:13]   面板类型: unknown
+[2026-04-18 11:47:14]   登录结果: no_api
+[2026-04-18 11:47:14]   注册非JSON: /api/v1/passport/auth/register -> status=468
+[2026-04-18 11:47:14]   注册非JSON: /auth/register -> status=468
+[2026-04-18 11:47:15]   注册非JSON: /api/v2/passport/auth/register -> status=468
+[2026-04-18 11:47:15]   注册结果: no_api
+[2026-04-18 11:47:16] 
+============================================================
+[2026-04-18 11:47:16] 处理 [53] Sakura Cat 樱花猫 - https://c2-sakuracat.com
+[2026-04-18 11:47:16]   邀请码: gNQyKqqG
+[2026-04-18 11:47:18]   📧 临时邮箱: barfuss62f046@g9.shopsprint.org (via tempmail_lol)
+[2026-04-18 11:47:18]   使用邮箱: barfuss62f046@g9.shopsprint.org (tempmail_lol)
+[2026-04-18 11:47:18]   面板类型: unknown
+[2026-04-18 11:47:19]   登录返回: /api/v1/passport/auth/login -> {"success": false, "data": ""}
+[2026-04-18 11:47:19]   登录结果: login_fail
+[2026-04-18 11:47:19]   注册返回: /api/v1/passport/auth/register -> {"success": false, "data": ""}
+[2026-04-18 11:47:19]   注册结果: register_fail
+[2026-04-18 11:47:20]   检测到导航页，尝试提取真实 URL...
+[2026-04-18 11:47:21]   二级跳转: https://guatizi.com/go/gsoucloud/
+[2026-04-18 11:47:23] 
+============================================================
+[2026-04-18 11:47:23] 处理 [54] Gsou Cloud - https://www.googletagmanager.com
+[2026-04-18 11:47:33]   站点不可达，跳过
+[2026-04-18 11:47:34] 
+============================================================
+[2026-04-18 11:47:34] 处理 [55] 雨燕云 - https://new4.yuyan.online
+[2026-04-18 11:47:34]   邀请码: Y91yRm56
+[2026-04-18 11:47:35]   V2Board 配置: 需邮箱验证=1, 需邀请码=0
+[2026-04-18 11:47:35]   站点限制邮箱后缀: ["['gmail.com'", "'qq.com'", "'163.com'", "'yahoo.com'", "'sina.com'", "'126.com'", "'outlook.com'", "'yeah.net'", "'foxmail.com'", "'proton.me']"]，使用 Gmail
+[2026-04-18 11:47:35]   使用邮箱: moneyflysubssr@gmail.com (gmail)
+[2026-04-18 11:47:35]   面板类型: v2board
+[2026-04-18 11:47:35]   登录结果: login_ok
+[2026-04-18 11:47:35]   订阅域名: 173.249.210.26
+[2026-04-18 11:47:36]   获取订阅连接 [https://173.249.210.26/s/b590020ef542fd01c5ac000c13ff493f] 失败: 服务端返回空内容
+[2026-04-18 11:47:36]   获取到 29 个套餐选项
+[2026-04-18 11:47:36]     入门套餐 | 月付 880.0元 | 88.0GB | 设备:0 | 带宽:0M
+[2026-04-18 11:47:36]     入门套餐 | 季付 26.0元 | 88.0GB | 设备:0 | 带宽:0M
+[2026-04-18 11:47:36]     入门套餐 | 半年付 52.0元 | 88.0GB | 设备:0 | 带宽:0M
+[2026-04-18 11:47:38] 
+============================================================
+[2026-04-18 11:47:38] 处理 [56] 雷霆 - https://hi.leiting.uk
+[2026-04-18 11:47:39]   📧 临时邮箱: jojo62f05b@ed.hush2u.com (via tempmail_lol)
+[2026-04-18 11:47:39]   使用邮箱: jojo62f05b@ed.hush2u.com (tempmail_lol)
+[2026-04-18 11:47:39]   面板类型: unknown
+[2026-04-18 11:47:39]   登录结果: no_api
+[2026-04-18 11:47:39]   注册非JSON: /api/v1/passport/auth/register -> status=405
+[2026-04-18 11:47:40]   注册非JSON: /auth/register -> status=405
+[2026-04-18 11:47:40]   注册非JSON: /api/v2/passport/auth/register -> status=405
+[2026-04-18 11:47:40]   注册结果: no_api
+[2026-04-18 11:47:41]   检测到导航页，尝试提取真实 URL...
+[2026-04-18 11:47:41]   二级跳转: https://guatizi.com/go/bridgethewise/
+[2026-04-18 11:47:44] 
+============================================================
+[2026-04-18 11:47:44] 处理 [57] Bridge the Wise - https://willup.net
+[2026-04-18 11:47:45]   📧 临时邮箱: laverne62f061@u7h.sixthirtydance.org (via tempmail_lol)
+[2026-04-18 11:47:45]   使用邮箱: laverne62f061@u7h.sixthirtydance.org (tempmail_lol)
+[2026-04-18 11:47:46]   面板类型: unknown
+[2026-04-18 11:47:49]   登录结果: no_api
+[2026-04-18 11:47:49]   注册非JSON: /api/v1/passport/auth/register -> status=404
+[2026-04-18 11:47:49]   注册非JSON: /auth/register -> status=404
+[2026-04-18 11:47:50]   注册非JSON: /api/v2/passport/auth/register -> status=404
+[2026-04-18 11:47:50]   注册结果: no_api
+[2026-04-18 11:47:51] 
+============================================================
+[2026-04-18 11:47:51] 处理 [58] 次元云 - https://ciyy.cc
+[2026-04-18 11:47:51]   邀请码: SDy1BBg2
+[2026-04-18 11:47:52]   📧 临时邮箱: cressy62f068@0m.sixthirtydance.org (via tempmail_lol)
+[2026-04-18 11:47:52]   使用邮箱: cressy62f068@0m.sixthirtydance.org (tempmail_lol)
+[2026-04-18 11:47:52]   面板类型: cloudflare
+[2026-04-18 11:47:53] 
+============================================================
+[2026-04-18 11:47:53] 处理 [59] 7速云 - https://7sucloud.net
+[2026-04-18 11:47:53]   邀请码: BUO5DT2C
+[2026-04-18 11:47:54]   📧 临时邮箱: killigrew62f06a@2k.shopsprint.org (via tempmail_lol)
+[2026-04-18 11:47:54]   使用邮箱: killigrew62f06a@2k.shopsprint.org (tempmail_lol)
+[2026-04-18 11:47:54]   面板类型: v2board
+[2026-04-18 11:47:56]   登录结果: no_api
+[2026-04-18 11:47:56]   注册非JSON: /api/v1/passport/auth/register -> status=405
+[2026-04-18 11:47:56]   注册非JSON: /auth/register -> status=405
+[2026-04-18 11:47:56]   注册结果: no_api
+[2026-04-18 11:47:57]   检测到导航页，尝试提取真实 URL...
+[2026-04-18 11:47:58]   二级跳转: https://guatizi.com/go/muguayun/
+[2026-04-18 11:47:59] 
+============================================================
+[2026-04-18 11:47:59] 处理 [60] 木瓜云 - https://www.googletagmanager.com
+[2026-04-18 11:48:09]   站点不可达，跳过
+[2026-04-18 11:48:10]   检测到导航页，尝试提取真实 URL...
+[2026-04-18 11:48:10]   二级跳转: https://guatizi.com/go/cylink/
+[2026-04-18 11:48:11] 
+============================================================
+[2026-04-18 11:48:11] 处理 [61] 次元链接 - https://www.googletagmanager.com
+[2026-04-18 11:48:14]   📧 临时邮箱: tobye62f07e@te.hush2u.com (via tempmail_lol)
+[2026-04-18 11:48:14]   使用邮箱: tobye62f07e@te.hush2u.com (tempmail_lol)
+[2026-04-18 11:48:14]   面板类型: unknown
+[2026-04-18 11:48:25]   登录超时: /auth/login
+[2026-04-18 11:48:35]   登录超时: /api/v2/passport/auth/login
+[2026-04-18 11:48:45]   登录结果: no_api
+[2026-04-18 11:48:55]   注册超时: /api/v1/passport/auth/register
+[2026-04-18 11:49:05]   注册超时: /auth/register
+[2026-04-18 11:49:15]   注册超时: /api/v2/passport/auth/register
+[2026-04-18 11:49:15]   注册结果: no_api
+[2026-04-18 11:49:15] 
+--- 进度: 60/380 ---
+[2026-04-18 11:49:15]   成功: 0, 已注册: 5, CF拦截: 14, 跳过: 36, 失败: 5
+[2026-04-18 11:49:16] 
+============================================================
+[2026-04-18 11:49:16] 处理 [62] Paper Plane - https://zfj.so
+[2026-04-18 11:49:16]   邀请码: a2d354c8d2
+[2026-04-18 11:49:18]   📧 临时邮箱: marian62f0be@08.shopsprint.org (via tempmail_lol)
+[2026-04-18 11:49:18]   使用邮箱: marian62f0be@08.shopsprint.org (tempmail_lol)
+[2026-04-18 11:49:18]   面板类型: unknown
+[2026-04-18 11:49:23]   登录异常: /auth/login - HTTPConnectionPool(host='127.0.0.1', port=6692): Max retries exceeded with url: http://localhost (Caused by ResponseError('too many 502 error responses'))
+[2026-04-18 11:49:23]   登录结果: no_api
+[2026-04-18 11:49:24]   注册非JSON: /api/v1/passport/auth/register -> status=404
+[2026-04-18 11:49:24]   注册结果: need_tos
+[2026-04-18 11:49:24]   需要同意服务条款，重试...
+[2026-04-18 11:49:24]   TOS重试返回: {"ret": 0, "msg": "请同意服务条款"}
+[2026-04-18 11:49:25] 
+============================================================
+[2026-04-18 11:49:25] 处理 [63] 猫熊网络加速器 - https://mxwljsq.com
+[2026-04-18 11:49:27]   📧 临时邮箱: amin62f0c7@zt.shopsprint.org (via tempmail_lol)
+[2026-04-18 11:49:27]   使用邮箱: amin62f0c7@zt.shopsprint.org (tempmail_lol)
+[2026-04-18 11:49:27]   面板类型: v2board
+[2026-04-18 11:49:27]   登录返回: /api/v1/passport/auth/login -> {"detail": "Not Found"}
+[2026-04-18 11:49:27]   登录结果: login_fail
+[2026-04-18 11:49:27]   注册返回: /api/v1/passport/auth/register -> {"detail": "Not Found"}
+[2026-04-18 11:49:27]   注册结果: register_fail
+[2026-04-18 11:49:29] 
+============================================================
+[2026-04-18 11:49:29] 处理 [64] NyaCloud - https://xn--9kqw7o.com
+[2026-04-18 11:49:31]   📧 临时邮箱: irene62f0cb@7u.cloudvxz.com (via tempmail_lol)
+[2026-04-18 11:49:31]   使用邮箱: irene62f0cb@7u.cloudvxz.com (tempmail_lol)
+[2026-04-18 11:49:31]   面板类型: unknown
+[2026-04-18 11:49:32]   登录结果: cloudflare
+[2026-04-18 11:49:33] 
+============================================================
+[2026-04-18 11:49:33] 处理 [65] Web3 加速器 - https://web3jsq.vip
+[2026-04-18 11:49:36]   站点不可达，跳过
+[2026-04-18 11:49:37] 
+============================================================
+[2026-04-18 11:49:37] 处理 [66] V2 Network - https://v2cn.com
+[2026-04-18 11:49:39]   📧 临时邮箱: ninette62f0d3@qq.tohal.org (via tempmail_lol)
+[2026-04-18 11:49:39]   使用邮箱: ninette62f0d3@qq.tohal.org (tempmail_lol)
+[2026-04-18 11:49:40]   面板类型: unknown
+[2026-04-18 11:49:41]   登录结果: no_api
+[2026-04-18 11:49:41]   注册非JSON: /api/v1/passport/auth/register -> status=404
+[2026-04-18 11:49:42]   注册非JSON: /auth/register -> status=404
+[2026-04-18 11:49:42]   注册非JSON: /api/v2/passport/auth/register -> status=404
+[2026-04-18 11:49:42]   注册结果: no_api
+[2026-04-18 11:49:43] 
+============================================================
+[2026-04-18 11:49:43] 处理 [67] KyCloud - https://cp.cloudnx.cc
+[2026-04-18 11:49:43]   邀请码: 59467
+[2026-04-18 11:49:46]   📧 临时邮箱: lurline62f0da@ju.cloudvxz.com (via tempmail_lol)
+[2026-04-18 11:49:46]   使用邮箱: lurline62f0da@ju.cloudvxz.com (tempmail_lol)
+[2026-04-18 11:49:47]   面板类型: unknown
+[2026-04-18 11:49:48]   登录结果: no_api
+[2026-04-18 11:49:48]   注册非JSON: /api/v1/passport/auth/register -> status=200
+[2026-04-18 11:49:48]   注册非JSON: /auth/register -> status=200
+[2026-04-18 11:49:49]   注册非JSON: /api/v2/passport/auth/register -> status=200
+[2026-04-18 11:49:49]   注册结果: no_api
+[2026-04-18 11:49:50]   检测到导航页，尝试提取真实 URL...
+[2026-04-18 11:49:50]   二级跳转: https://guatizi.com/go/xlinkworld/
+[2026-04-18 11:49:52] 
+============================================================
+[2026-04-18 11:49:52] 处理 [68] Xlinkworld - https://www.googletagmanager.com
+[2026-04-18 11:49:56]   📧 临时邮箱: lindi62f0e4@f5.tohal.org (via tempmail_lol)
+[2026-04-18 11:49:56]   使用邮箱: lindi62f0e4@f5.tohal.org (tempmail_lol)
+[2026-04-18 11:49:56]   面板类型: unknown
+[2026-04-18 11:50:09]   登录超时: /api/v2/passport/auth/login
+[2026-04-18 11:50:11]   登录结果: no_api
+[2026-04-18 11:50:11]   注册非JSON: /api/v1/passport/auth/register -> status=404
+[2026-04-18 11:50:21]   注册超时: /auth/register
+[2026-04-18 11:50:31]   注册超时: /api/v2/passport/auth/register
+[2026-04-18 11:50:31]   注册结果: no_api
+[2026-04-18 11:50:32] 
+============================================================
+[2026-04-18 11:50:32] 处理 [69] Just My Socks - https://justmysocks3.net
+[2026-04-18 11:50:35]   📧 临时邮箱: grath62f10b@u9.accesswiki.net (via tempmail_lol)
+[2026-04-18 11:50:35]   使用邮箱: grath62f10b@u9.accesswiki.net (tempmail_lol)
+[2026-04-18 11:50:35]   面板类型: unknown
+[2026-04-18 11:50:39]   登录结果: no_api
+[2026-04-18 11:50:39]   注册非JSON: /api/v1/passport/auth/register -> status=404
+[2026-04-18 11:50:39]   注册非JSON: /auth/register -> status=404
+[2026-04-18 11:50:39]   注册非JSON: /api/v2/passport/auth/register -> status=404
+[2026-04-18 11:50:39]   注册结果: no_api
+[2026-04-18 11:50:40] 
+============================================================
+[2026-04-18 11:50:40] 处理 [70] Mie Link 羊圈机场 - https://mielink.org
+[2026-04-18 11:50:45]   📧 临时邮箱: leonidas62f115@sl.accesswiki.net (via tempmail_lol)
+[2026-04-18 11:50:45]   使用邮箱: leonidas62f115@sl.accesswiki.net (tempmail_lol)
+[2026-04-18 11:50:47]   面板类型: unknown
+[2026-04-18 11:50:47]   登录返回: /api/v1/passport/auth/login -> {"code": 400, "message": "此路径必须使用加密访问"}
+[2026-04-18 11:50:47]   登录结果: login_fail
+[2026-04-18 11:50:48]   注册返回: /api/v1/passport/auth/register -> {"code": 400, "message": "此路径必须使用加密访问"}
+[2026-04-18 11:50:48]   注册结果: register_fail
+[2026-04-18 11:50:49] 
+============================================================
+[2026-04-18 11:50:49] 处理 [71] CMY Network 红莓网络 - https://cmy3.network
+[2026-04-18 11:50:52]   📧 临时邮箱: justinn62f11c@sf.sixthirtydance.org (via tempmail_lol)
+[2026-04-18 11:50:52]   使用邮箱: justinn62f11c@sf.sixthirtydance.org (tempmail_lol)
+[2026-04-18 11:50:52]   面板类型: unknown
+[2026-04-18 11:50:52]   登录返回: /api/v1/passport/auth/login -> {"code": 400, "message": "此路径必须使用加密访问"}
+[2026-04-18 11:50:52]   登录结果: login_fail
+[2026-04-18 11:50:53]   注册返回: /api/v1/passport/auth/register -> {"code": 400, "message": "此路径必须使用加密访问"}
+[2026-04-18 11:50:53]   注册结果: register_fail
+[2026-04-18 11:50:53] 
+--- 进度: 70/380 ---
+[2026-04-18 11:50:53]   成功: 0, 已注册: 5, CF拦截: 15, 跳过: 41, 失败: 9
+[2026-04-18 11:50:54] 
+============================================================
+[2026-04-18 11:50:54] 处理 [72] MilkCat 奶猫 - https://catweb.jjjxgc.com
+[2026-04-18 11:50:54]   邀请码: zX0OMoQr
+[2026-04-18 11:50:57]   📧 临时邮箱: hertzfeld62f121@ek.sixthirtydance.org (via tempmail_lol)
+[2026-04-18 11:50:57]   使用邮箱: hertzfeld62f121@ek.sixthirtydance.org (tempmail_lol)
+[2026-04-18 11:50:58]   面板类型: v2board
+[2026-04-18 11:51:02]   登录结果: no_api
+[2026-04-18 11:51:02]   注册非JSON: /api/v1/passport/auth/register -> status=404
+[2026-04-18 11:51:03]   注册非JSON: /auth/register -> status=404
+[2026-04-18 11:51:03]   注册结果: no_api
+[2026-04-18 11:51:04] 
+============================================================
+[2026-04-18 11:51:04] 处理 [73] 饿饭CC云 - https://efanccyun.org
+[2026-04-18 11:51:05]   📧 临时邮箱: fee62f129@gk.cloudvxz.com (via tempmail_lol)
+[2026-04-18 11:51:05]   使用邮箱: fee62f129@gk.cloudvxz.com (tempmail_lol)
+[2026-04-18 11:51:05]   面板类型: unknown
+[2026-04-18 11:51:05]   登录结果: cloudflare
+[2026-04-18 11:51:06] 
+============================================================
+[2026-04-18 11:51:06] 处理 [74] 青云梯 - https://qytcc01a.qingyunti.pro
+[2026-04-18 11:51:07]   📧 临时邮箱: sethrida62f12b@t2.sixthirtydance.org (via tempmail_lol)
+[2026-04-18 11:51:07]   使用邮箱: sethrida62f12b@t2.sixthirtydance.org (tempmail_lol)
+[2026-04-18 11:51:08]   面板类型: cloudflare
+[2026-04-18 11:51:09] 
+============================================================
+[2026-04-18 11:51:09] 处理 [75] TomatoCloud - https://tomatocloud.me
+[2026-04-18 11:51:09]   邀请码: Lzw71T
+[2026-04-18 11:51:09]   站点不可达，跳过
+[2026-04-18 11:51:10] 
+============================================================
+[2026-04-18 11:51:10] 处理 [76] CitrusLab - https://h2breeze.com
+[2026-04-18 11:51:10]   邀请码: lDbdDtHB
+[2026-04-18 11:51:11]   站点不可达，跳过
+[2026-04-18 11:51:12] 
+============================================================
+[2026-04-18 11:51:12] 处理 [77] 忍者云 - https://renzhe.cloud
+[2026-04-18 11:51:14]   📧 临时邮箱: cristen62f132@wn.sixthirtydance.org (via tempmail_lol)
+[2026-04-18 11:51:14]   使用邮箱: cristen62f132@wn.sixthirtydance.org (tempmail_lol)
+[2026-04-18 11:51:14]   面板类型: cloudflare
+[2026-04-18 11:51:16] 
+============================================================
+[2026-04-18 11:51:16] 处理 [78] 科技熊 - https://kjxclub.com
+[2026-04-18 11:51:16]   邀请码: eerr
+[2026-04-18 11:51:18]   📧 临时邮箱: cohberg62f136@v2.tohal.org (via tempmail_lol)
+[2026-04-18 11:51:18]   使用邮箱: cohberg62f136@v2.tohal.org (tempmail_lol)
+[2026-04-18 11:51:18]   面板类型: unknown
+[2026-04-18 11:51:20]   登录结果: no_api
+[2026-04-18 11:51:20]   注册非JSON: /api/v1/passport/auth/register -> status=200
+[2026-04-18 11:51:21]   注册非JSON: /auth/register -> status=200
+[2026-04-18 11:51:21]   注册非JSON: /api/v2/passport/auth/register -> status=200
+[2026-04-18 11:51:21]   注册结果: no_api
+[2026-04-18 11:51:22] 
+============================================================
+[2026-04-18 11:51:22] 处理 [79] Element - https://www.yuansu.app
+[2026-04-18 11:51:24]   📧 临时邮箱: barber62f13c@zz.hush2u.com (via tempmail_lol)
+[2026-04-18 11:51:24]   使用邮箱: barber62f13c@zz.hush2u.com (tempmail_lol)
+[2026-04-18 11:51:24]   面板类型: v2board
+[2026-04-18 11:51:26]   登录结果: no_api
+[2026-04-18 11:51:26]   注册非JSON: /api/v1/passport/auth/register -> status=404
+[2026-04-18 11:51:26]   注册非JSON: /auth/register -> status=404
+[2026-04-18 11:51:26]   注册结果: no_api
+[2026-04-18 11:51:27] 
+============================================================
+[2026-04-18 11:51:27] 处理 [80] prprCloud - https://prpr.96110.cn.com
+[2026-04-18 11:51:29]   📧 临时邮箱: lorrin62f141@6y.sixthirtydance.org (via tempmail_lol)
+[2026-04-18 11:51:29]   使用邮箱: lorrin62f141@6y.sixthirtydance.org (tempmail_lol)
+[2026-04-18 11:51:29]   面板类型: unknown
+[2026-04-18 11:51:30]   登录结果: no_api
+[2026-04-18 11:51:30]   注册非JSON: /api/v1/passport/auth/register -> status=404
+[2026-04-18 11:51:30]   注册非JSON: /auth/register -> status=404
+[2026-04-18 11:51:30]   注册非JSON: /api/v2/passport/auth/register -> status=404
+[2026-04-18 11:51:30]   注册结果: no_api
+[2026-04-18 11:51:31] 
+============================================================
+[2026-04-18 11:51:31] 处理 [81] 速鹰666 - https://sy77a12.com
+[2026-04-18 11:51:31]   邀请码: nEmD
+[2026-04-18 11:51:33]   📧 临时邮箱: kelcie62f145@16.sixthirtydance.org (via tempmail_lol)
+[2026-04-18 11:51:33]   使用邮箱: kelcie62f145@16.sixthirtydance.org (tempmail_lol)
+[2026-04-18 11:51:33]   面板类型: unknown
+[2026-04-18 11:51:34]   登录结果: no_api
+[2026-04-18 11:51:34]   注册非JSON: /api/v1/passport/auth/register -> status=200
+[2026-04-18 11:51:34]   注册非JSON: /auth/register -> status=200
+[2026-04-18 11:51:34]   注册非JSON: /api/v2/passport/auth/register -> status=200
+[2026-04-18 11:51:34]   注册结果: no_api
+[2026-04-18 11:51:34] 
+--- 进度: 80/380 ---
+[2026-04-18 11:51:34]   成功: 0, 已注册: 5, CF拦截: 18, 跳过: 48, 失败: 9
+[2026-04-18 11:51:36] 
+============================================================
+[2026-04-18 11:51:36] 处理 [82] 桔子云 - https://jzy66222.xyz
+[2026-04-18 11:51:36]   邀请码: ajJa
+[2026-04-18 11:51:37]   📧 临时邮箱: jeanelle62f149@tw.hush2u.com (via tempmail_lol)
+[2026-04-18 11:51:37]   使用邮箱: jeanelle62f149@tw.hush2u.com (tempmail_lol)
+[2026-04-18 11:51:37]   面板类型: unknown
+[2026-04-18 11:51:39]   登录结果: no_api
+[2026-04-18 11:51:39]   注册非JSON: /api/v1/passport/auth/register -> status=200
+[2026-04-18 11:51:39]   注册非JSON: /auth/register -> status=200
+[2026-04-18 11:51:39]   注册非JSON: /api/v2/passport/auth/register -> status=200
+[2026-04-18 11:51:39]   注册结果: no_api
+[2026-04-18 11:51:40] 
+============================================================
+[2026-04-18 11:51:40] 处理 [83] BestVPN! - https://best.invitevp.com
+[2026-04-18 11:51:40]   邀请码: oFipIA9S
+[2026-04-18 11:51:42]   📧 临时邮箱: alethea62f14e@in.tohal.org (via tempmail_lol)
+[2026-04-18 11:51:42]   使用邮箱: alethea62f14e@in.tohal.org (tempmail_lol)
+[2026-04-18 11:51:42]   面板类型: unknown
+[2026-04-18 11:51:43]   登录结果: no_api
+[2026-04-18 11:51:43]   注册非JSON: /api/v1/passport/auth/register -> status=405
+[2026-04-18 11:51:43]   注册非JSON: /auth/register -> status=405
+[2026-04-18 11:51:43]   注册非JSON: /api/v2/passport/auth/register -> status=405
+[2026-04-18 11:51:43]   注册结果: no_api
+[2026-04-18 11:51:44] 
+============================================================
+[2026-04-18 11:51:44] 处理 [84] GLaDOS - https://glados.space
+[2026-04-18 11:51:46]   📧 临时邮箱: chloette62f152@tfh.shopsprint.org (via tempmail_lol)
+[2026-04-18 11:51:46]   使用邮箱: chloette62f152@tfh.shopsprint.org (tempmail_lol)
+[2026-04-18 11:51:46]   面板类型: v2board
+[2026-04-18 11:51:47]   登录结果: no_api
+[2026-04-18 11:51:47]   注册非JSON: /api/v1/passport/auth/register -> status=404
+[2026-04-18 11:51:47]   注册非JSON: /auth/register -> status=404
+[2026-04-18 11:51:47]   注册结果: no_api
+[2026-04-18 11:51:48] 
+============================================================
+[2026-04-18 11:51:48] 处理 [85] WestData - https://wd-gold.com
+[2026-04-18 11:51:48]   邀请码: 1327
+[2026-04-18 11:51:50]   📧 临时邮箱: salomie62f156@vq.accesswiki.net (via tempmail_lol)
+[2026-04-18 11:51:50]   使用邮箱: salomie62f156@vq.accesswiki.net (tempmail_lol)
+[2026-04-18 11:51:50]   面板类型: cloudflare
+[2026-04-18 11:51:51] 
+============================================================
+[2026-04-18 11:51:51] 处理 [86] CreamData 奶油 - https://www.naiyovpn.com
+[2026-04-18 11:51:51]   邀请码: 20
+[2026-04-18 11:51:52]   📧 临时邮箱: kaia62f158@9s.shopsprint.org (via tempmail_lol)
+[2026-04-18 11:51:52]   使用邮箱: kaia62f158@9s.shopsprint.org (tempmail_lol)
+[2026-04-18 11:51:52]   面板类型: cloudflare
+[2026-04-18 11:51:53] 
+============================================================
+[2026-04-18 11:51:53] 处理 [87] 泡芙云 - https://x.paofu.io
+[2026-04-18 11:51:59]   📧 临时邮箱: s8g33zwbvt@deltajohnsons.com (via mail_tm)
+[2026-04-18 11:51:59]   使用邮箱: s8g33zwbvt@deltajohnsons.com (mail_tm)
+[2026-04-18 11:52:00]   面板类型: unknown
+[2026-04-18 11:52:00]   登录结果: no_api
+[2026-04-18 11:52:01]   注册非JSON: /api/v1/passport/auth/register -> status=200
+[2026-04-18 11:52:01]   注册非JSON: /auth/register -> status=200
+[2026-04-18 11:52:01]   注册非JSON: /api/v2/passport/auth/register -> status=200
+[2026-04-18 11:52:01]   注册结果: no_api
+[2026-04-18 11:52:02] 
+============================================================
+[2026-04-18 11:52:02] 处理 [88] 瑶瑶领先 - https://yyssr.org
+[2026-04-18 11:52:02]   邀请码: a7ad7c24bb
+[2026-04-18 11:52:08]   📧 临时邮箱: fltknkppsd@deltajohnsons.com (via mail_tm)
+[2026-04-18 11:52:08]   使用邮箱: fltknkppsd@deltajohnsons.com (mail_tm)
+[2026-04-18 11:52:08]   面板类型: unknown
+[2026-04-18 11:52:08]   登录返回: /auth/login -> {"ret": 0, "msg": "邮箱或者密码错误"}
+[2026-04-18 11:52:08]   登录结果: login_fail
+[2026-04-18 11:52:08]   注册非JSON: /api/v1/passport/auth/register -> status=404
+[2026-04-18 11:52:09]   注册结果: need_tos
+[2026-04-18 11:52:09]   需要同意服务条款，重试...
+[2026-04-18 11:52:09]   TOS重试返回: {"ret": 0, "msg": "请同意服务条款"}
+[2026-04-18 11:52:10] 
+============================================================
+[2026-04-18 11:52:10] 处理 [89] Boslife - https://www.blnew.com
+[2026-04-18 11:52:10]   邀请码: NlciSgn2
+[2026-04-18 11:52:16]   📧 临时邮箱: tfv6x2o88m@deltajohnsons.com (via mail_tm)
+[2026-04-18 11:52:16]   使用邮箱: tfv6x2o88m@deltajohnsons.com (mail_tm)
+[2026-04-18 11:52:16]   面板类型: unknown
+[2026-04-18 11:52:20]   登录结果: no_api
+[2026-04-18 11:52:21]   注册非JSON: /api/v1/passport/auth/register -> status=404
+[2026-04-18 11:52:21]   注册非JSON: /auth/register -> status=404
+[2026-04-18 11:52:22]   注册非JSON: /api/v2/passport/auth/register -> status=404
+[2026-04-18 11:52:22]   注册结果: no_api
+[2026-04-18 11:52:23] 
+============================================================
+[2026-04-18 11:52:23] 处理 [90] 纷达网络 - https://fenda.cloud
+[2026-04-18 11:52:30]   📧 临时邮箱: g7axc7zkdz@deltajohnsons.com (via mail_tm)
+[2026-04-18 11:52:30]   使用邮箱: g7axc7zkdz@deltajohnsons.com (mail_tm)
+[2026-04-18 11:52:31]   面板类型: unknown
+[2026-04-18 11:52:31]   登录返回: /auth/login -> {"ret": 0, "msg": "邮箱不存在"}
+[2026-04-18 11:52:31]   登录结果: login_fail
+[2026-04-18 11:52:32]   注册非JSON: /api/v1/passport/auth/register -> status=404
+[2026-04-18 11:52:32]   注册结果: need_email_code
+[2026-04-18 11:52:32]   需要邮件验证码，启动验证码流程...
+[2026-04-18 11:52:34] 
+============================================================
+[2026-04-18 11:52:34] 处理 [91] Fastlink - https://a12.flaffa03.cc
+[2026-04-18 11:52:40]   📧 临时邮箱: 4dcp940vn5@bwmyga.com (via temp_mail_io)
+[2026-04-18 11:52:40]   使用邮箱: 4dcp940vn5@bwmyga.com (temp_mail_io)
+[2026-04-18 11:52:40]   面板类型: v2board
+[2026-04-18 11:52:41]   登录结果: no_api
+[2026-04-18 11:52:41]   注册非JSON: /api/v1/passport/auth/register -> status=200
+[2026-04-18 11:52:42]   注册非JSON: /auth/register -> status=200
+[2026-04-18 11:52:42]   注册结果: no_api
+[2026-04-18 11:52:42] 
+--- 进度: 90/380 ---
+[2026-04-18 11:52:42]   成功: 0, 已注册: 5, CF拦截: 20, 跳过: 54, 失败: 11
+[2026-04-18 11:52:43] 
+============================================================
+[2026-04-18 11:52:43] 处理 [92] 涩龙云 - https://www.selom.xyz
+[2026-04-18 11:52:43]   邀请码: LLQNKXcA
+[2026-04-18 11:52:44]   V2Board 配置: 需邮箱验证=1, 需邀请码=0
+[2026-04-18 11:52:44]   站点限制邮箱后缀: ["['gmail.com'", "'qq.com'", "'163.com'", "'yahoo.com'", "'sina.com'", "'126.com'", "'outlook.com'", "'yeah.net'", "'foxmail.com']"]，使用 Gmail
+[2026-04-18 11:52:44]   使用邮箱: moneyflysubssr@gmail.com (gmail)
+[2026-04-18 11:52:44]   面板类型: v2board
+[2026-04-18 11:52:45]   登录结果: login_ok
+[2026-04-18 11:52:45]   订阅域名: orange.slsub.com
+[2026-04-18 11:52:48]   获取订阅连接 [https://orange.slsub.com/subs/0b31774f5625c6043847ec7b0168d5dd] 失败: 服务端返回空内容
+[2026-04-18 11:52:48]   获取到 26 个套餐选项
+[2026-04-18 11:52:48]     Basic 套餐 | 月付 10.0元 | 120.0GB | 设备:6 | 带宽:0M
+[2026-04-18 11:52:48]     Basic 套餐 | 季付 28.0元 | 120.0GB | 设备:6 | 带宽:0M
+[2026-04-18 11:52:48]     Basic 套餐 | 半年付 55.0元 | 120.0GB | 设备:6 | 带宽:0M
+[2026-04-18 11:52:49] 
+============================================================
+[2026-04-18 11:52:49] 处理 [93] Nerwo 机场 - https://share.eleven.observer
+[2026-04-18 11:52:49]   邀请码: bvvf
+[2026-04-18 11:52:50]   站点不可达，跳过
+[2026-04-18 11:52:51] 
+============================================================
+[2026-04-18 11:52:51] 处理 [94] 我们所向往的 wmsxwd - https://wmsxwd-3.men
+[2026-04-18 11:52:51]   邀请码: 4Qa6zQxl
+[2026-04-18 11:52:53]   📧 临时邮箱: sibley62f195@64l.shopsprint.org (via tempmail_lol)
+[2026-04-18 11:52:53]   使用邮箱: sibley62f195@64l.shopsprint.org (tempmail_lol)
+[2026-04-18 11:52:53]   面板类型: unknown
+[2026-04-18 11:52:55]   登录结果: no_api
+[2026-04-18 11:52:55]   注册非JSON: /api/v1/passport/auth/register -> status=404
+[2026-04-18 11:52:55]   注册非JSON: /auth/register -> status=404
+[2026-04-18 11:52:56]   注册非JSON: /api/v2/passport/auth/register -> status=404
+[2026-04-18 11:52:56]   注册结果: no_api
+[2026-04-18 11:52:57] 
+============================================================
+[2026-04-18 11:52:57] 处理 [95] AmyTelecom - https://www.amytele.co
+[2026-04-18 11:52:57]   邀请码: 17
+[2026-04-18 11:52:58]   📧 临时邮箱: elisabet62f19a@29.accesswiki.net (via tempmail_lol)
+[2026-04-18 11:52:58]   使用邮箱: elisabet62f19a@29.accesswiki.net (tempmail_lol)
+[2026-04-18 11:52:58]   面板类型: cloudflare
+[2026-04-18 11:52:59] 
+============================================================
+[2026-04-18 11:52:59] 处理 [96] 魅影极速 - https://www.myjs.net
+[2026-04-18 11:53:01]   📧 临时邮箱: zippel62f19d@o8.cloudvxz.com (via tempmail_lol)
+[2026-04-18 11:53:01]   使用邮箱: zippel62f19d@o8.cloudvxz.com (tempmail_lol)
+[2026-04-18 11:53:01]   面板类型: unknown
+[2026-04-18 11:53:04]   登录结果: no_api
+[2026-04-18 11:53:04]   注册非JSON: /api/v1/passport/auth/register -> status=404
+[2026-04-18 11:53:04]   注册非JSON: /auth/register -> status=404
+[2026-04-18 11:53:04]   注册非JSON: /api/v2/passport/auth/register -> status=404
+[2026-04-18 11:53:04]   注册结果: no_api
+[2026-04-18 11:53:05] 
+============================================================
+[2026-04-18 11:53:05] 处理 [97] X-Air - https://my.x-air.app:666
+[2026-04-18 11:53:05]   邀请码: 34041
+[2026-04-18 11:53:07]   📧 临时邮箱: stander62f1a3@4u.tohal.org (via tempmail_lol)
+[2026-04-18 11:53:07]   使用邮箱: stander62f1a3@4u.tohal.org (tempmail_lol)
+[2026-04-18 11:53:07]   面板类型: unknown
+[2026-04-18 11:53:07]   登录结果: no_api
+[2026-04-18 11:53:07]   注册非JSON: /api/v1/passport/auth/register -> status=404
+[2026-04-18 11:53:08]   注册非JSON: /auth/register -> status=404
+[2026-04-18 11:53:08]   注册非JSON: /api/v2/passport/auth/register -> status=404
+[2026-04-18 11:53:08]   注册结果: no_api
+[2026-04-18 11:53:09] 
+============================================================
+[2026-04-18 11:53:09] 处理 [98] Bitz Net - https://dash.gobitz.net
+[2026-04-18 11:53:09]   邀请码: cNQOuMNq
+[2026-04-18 11:53:10]   V2Board 配置: 需邮箱验证=1, 需邀请码=0
+[2026-04-18 11:53:10]   站点限制邮箱后缀: ["['gmail.com'", "'qq.com'", "'163.com'", "'126.com'", "'yahoo.com'", "'yeah.net'", "'foxmail.com']"]，使用 Gmail
+[2026-04-18 11:53:10]   使用邮箱: moneyflysubssr@gmail.com (gmail)
+[2026-04-18 11:53:10]   面板类型: v2board
+[2026-04-18 11:53:10]   登录返回: /api/v1/passport/auth/login -> {"message": "The GET method is not supported for this route. Supported methods: POST."}
+[2026-04-18 11:53:10]   登录结果: login_fail
+[2026-04-18 11:53:11]   注册返回: /api/v1/passport/auth/register -> {"message": "The GET method is not supported for this route. Supported methods: POST."}
+[2026-04-18 11:53:11]   注册结果: register_fail
+[2026-04-18 11:53:12] 
+============================================================
+[2026-04-18 11:53:12] 处理 [99] Ayanami！（色色小站） - https://www.sesexiaozhan.com
+[2026-04-18 11:53:12]   邀请码: Xq8mcGFd
+[2026-04-18 11:53:13]   📧 临时邮箱: terryl62f1a9@mt.tohal.org (via tempmail_lol)
+[2026-04-18 11:53:13]   使用邮箱: terryl62f1a9@mt.tohal.org (tempmail_lol)
+[2026-04-18 11:53:13]   面板类型: cloudflare
+[2026-04-18 11:53:14] 
+============================================================
+[2026-04-18 11:53:14] 处理 [100] Coffee Cloud - https://xn--9kqp0mora.com
+[2026-04-18 11:53:14]   邀请码: s5MEj7Ro
+[2026-04-18 11:53:15]   📧 临时邮箱: latea62f1ab@lt.shopsprint.org (via tempmail_lol)
+[2026-04-18 11:53:15]   使用邮箱: latea62f1ab@lt.shopsprint.org (tempmail_lol)
+[2026-04-18 11:53:16]   面板类型: unknown
+[2026-04-18 11:53:16]   登录结果: no_api
+[2026-04-18 11:53:16]   注册非JSON: /api/v1/passport/auth/register -> status=405
+[2026-04-18 11:53:16]   注册非JSON: /auth/register -> status=405
+[2026-04-18 11:53:16]   注册非JSON: /api/v2/passport/auth/register -> status=405
+[2026-04-18 11:53:16]   注册结果: no_api
+[2026-04-18 11:53:17] 
+============================================================
+[2026-04-18 11:53:17] 处理 [101] 奈云 - https://aff.v2ny.mom
+[2026-04-18 11:53:17]   邀请码: T86GRpsu
+[2026-04-18 11:53:20]   📧 临时邮箱: dunseath62f1b0@x3f.shopsprint.org (via tempmail_lol)
+[2026-04-18 11:53:20]   使用邮箱: dunseath62f1b0@x3f.shopsprint.org (tempmail_lol)
+[2026-04-18 11:53:20]   面板类型: unknown
+[2026-04-18 11:53:22]   登录结果: no_api
+[2026-04-18 11:53:22]   注册非JSON: /api/v1/passport/auth/register -> status=404
+[2026-04-18 11:53:23]   注册非JSON: /auth/register -> status=404
+[2026-04-18 11:53:23]   注册非JSON: /api/v2/passport/auth/register -> status=404
+[2026-04-18 11:53:23]   注册结果: no_api
+[2026-04-18 11:53:23] 
+--- 进度: 100/380 ---
+[2026-04-18 11:53:23]   成功: 0, 已注册: 6, CF拦截: 22, 跳过: 60, 失败: 12
+[2026-04-18 11:53:24] 
+============================================================
+[2026-04-18 11:53:24] 处理 [102] 一枝红杏 - https://order.yizhihongxing.club
+[2026-04-18 11:53:28]   📧 临时邮箱: tremayne62f1b8@yt.cloudvxz.com (via tempmail_lol)
+[2026-04-18 11:53:28]   使用邮箱: tremayne62f1b8@yt.cloudvxz.com (tempmail_lol)
+[2026-04-18 11:53:29]   面板类型: unknown
+[2026-04-18 11:53:30]   登录返回: /api/v2/passport/auth/login -> {"message": "Unsupported operation or request method"}
+[2026-04-18 11:53:30]   登录结果: login_fail
+[2026-04-18 11:53:31]   注册非JSON: /api/v1/passport/auth/register -> status=405
+[2026-04-18 11:53:31]   注册非JSON: /auth/register -> status=404
+[2026-04-18 11:53:32]   注册非JSON: /api/v2/passport/auth/register -> status=405
+[2026-04-18 11:53:32]   注册结果: no_api
+[2026-04-18 11:53:33] 
+============================================================
+[2026-04-18 11:53:33] 处理 [103] BFG 加速 - https://www.bfgok.com
+[2026-04-18 11:53:33]   邀请码: GQDdMl
+[2026-04-18 11:53:36]   📧 临时邮箱: alexia62f1c0@tuj.accesswiki.net (via tempmail_lol)
+[2026-04-18 11:53:36]   使用邮箱: alexia62f1c0@tuj.accesswiki.net (tempmail_lol)
+[2026-04-18 11:53:36]   面板类型: unknown
+[2026-04-18 11:53:41]   登录结果: no_api
+[2026-04-18 11:53:42]   注册非JSON: /api/v1/passport/auth/register -> status=200
+[2026-04-18 11:53:43]   注册非JSON: /auth/register -> status=200
+[2026-04-18 11:53:44]   注册非JSON: /api/v2/passport/auth/register -> status=200
+[2026-04-18 11:53:44]   注册结果: no_api
+[2026-04-18 11:53:45] 
+============================================================
+[2026-04-18 11:53:45] 处理 [104] Godetia - https://lkjhl.goodoetoioa.xyz
+[2026-04-18 11:53:45]   邀请码: oj7lAyEn
+[2026-04-18 11:53:46]   V2Board 配置: 需邮箱验证=1, 需邀请码=0
+[2026-04-18 11:53:46]   站点限制邮箱后缀: ["['gmail.com'", "'qq.com'", "'163.com'", "'yahoo.com'", "'sina.com'", "'126.com'", "'outlook.com'", "'yeah.net'", "'foxmail.com'", "'protonmail.com'", "'hotmail.com'", "'icloud.com'", "'tutanota.com'", "'tutanota.de'", "'tutamail.co'", "'tuta.io'", "'keemail.me']"]，使用 Gmail
+[2026-04-18 11:53:46]   使用邮箱: moneyflysubssr@gmail.com (gmail)
+[2026-04-18 11:53:46]   面板类型: v2board
+[2026-04-18 11:53:46]   登录结果: login_ok
+[2026-04-18 11:53:46]   订阅域名: dsfhi.dwhufe.bar
+[2026-04-18 11:53:48]   获取订阅连接 [https://dsfhi.dwhufe.bar/s/2d5c8da72835d9fa72726c86356a667b] 失败: 服务端返回空内容
+[2026-04-18 11:53:48]   获取到 24 个套餐选项
+[2026-04-18 11:53:48]     Lite | 月付 35.0元 | 85.0GB | 设备:0 | 带宽:0M
+[2026-04-18 11:53:48]     Lite | 季付 94.5元 | 85.0GB | 设备:0 | 带宽:0M
+[2026-04-18 11:53:48]     Lite | 半年付 184.8元 | 85.0GB | 设备:0 | 带宽:0M
+[2026-04-18 11:53:49] 
+============================================================
+[2026-04-18 11:53:49] 处理 [105] 白月光机场 - https://www.sibker.com
+[2026-04-18 11:53:49]   邀请码: MLRoveBn
+[2026-04-18 11:53:51]   📧 临时邮箱: devinne62f1cf@ew.cloudvxz.com (via tempmail_lol)
+[2026-04-18 11:53:51]   使用邮箱: devinne62f1cf@ew.cloudvxz.com (tempmail_lol)
+[2026-04-18 11:53:51]   面板类型: unknown
+[2026-04-18 11:53:53]   登录结果: no_api
+[2026-04-18 11:53:53]   注册非JSON: /api/v1/passport/auth/register -> status=200
+[2026-04-18 11:53:54]   注册非JSON: /auth/register -> status=200
+[2026-04-18 11:53:54]   注册非JSON: /api/v2/passport/auth/register -> status=200
+[2026-04-18 11:53:54]   注册结果: no_api
+[2026-04-18 11:53:55] 
+============================================================
+[2026-04-18 11:53:55] 处理 [106] Infini Port - https://console.infiniport.xyz
+[2026-04-18 11:53:55]   邀请码: cd00IGfe
+[2026-04-18 11:53:57]   📧 临时邮箱: waldon62f1d5@u7h.sixthirtydance.org (via tempmail_lol)
+[2026-04-18 11:53:57]   使用邮箱: waldon62f1d5@u7h.sixthirtydance.org (tempmail_lol)
+[2026-04-18 11:53:57]   面板类型: cloudflare
+[2026-04-18 11:53:58] 
+============================================================
+[2026-04-18 11:53:58] 处理 [107] Paoluz 跑路云 - https://paoluz.link
+[2026-04-18 11:53:58]   邀请码: gZNc
+[2026-04-18 11:53:59]   📧 临时邮箱: karil62f1d7@6c.tohal.org (via tempmail_lol)
+[2026-04-18 11:53:59]   使用邮箱: karil62f1d7@6c.tohal.org (tempmail_lol)
+[2026-04-18 11:54:00]   面板类型: cloudflare
+[2026-04-18 11:54:01] 
+============================================================
+[2026-04-18 11:54:01] 处理 [108] SaySS - https://www.sayss.net
+[2026-04-18 11:54:01]   站点不可达，跳过
+[2026-04-18 11:54:02]   检测到导航页，尝试提取真实 URL...
+[2026-04-18 11:54:03]   二级跳转: https://guatizi.com/
+[2026-04-18 11:54:03] 
+============================================================
+[2026-04-18 11:54:03] 处理 [109] 飞数机场 - https://guatizi.com
+[2026-04-18 11:54:05]   📧 临时邮箱: chane62f1dd@9c.cloudvxz.com (via tempmail_lol)
+[2026-04-18 11:54:05]   使用邮箱: chane62f1dd@9c.cloudvxz.com (tempmail_lol)
+[2026-04-18 11:54:05]   面板类型: unknown
+[2026-04-18 11:54:06]   登录结果: no_api
+[2026-04-18 11:54:07]   注册非JSON: /api/v1/passport/auth/register -> status=404
+[2026-04-18 11:54:07]   注册非JSON: /auth/register -> status=404
+[2026-04-18 11:54:07]   注册非JSON: /api/v2/passport/auth/register -> status=404
+[2026-04-18 11:54:07]   注册结果: no_api
+[2026-04-18 11:54:08] 
+============================================================
+[2026-04-18 11:54:08] 处理 [110] Gatern 机场 - https://s.gtoyes.com
+[2026-04-18 11:54:12]   📧 临时邮箱: shinberg62f1e4@77.cloudvxz.com (via tempmail_lol)
+[2026-04-18 11:54:12]   使用邮箱: shinberg62f1e4@77.cloudvxz.com (tempmail_lol)
+[2026-04-18 11:54:13]   面板类型: unknown
+[2026-04-18 11:54:16]   登录结果: no_api
+[2026-04-18 11:54:17]   注册非JSON: /api/v1/passport/auth/register -> status=404
+[2026-04-18 11:54:17]   注册非JSON: /auth/register -> status=404
+[2026-04-18 11:54:17]   注册非JSON: /api/v2/passport/auth/register -> status=404
+[2026-04-18 11:54:17]   注册结果: no_api
+[2026-04-18 11:54:18] 
+============================================================
+[2026-04-18 11:54:18] 处理 [111] SpeedCAT 闪电猫 - https://scvbaff-hezb07.cc
+[2026-04-18 11:54:20]   📧 临时邮箱: berlyn62f1ed@sw.accesswiki.net (via tempmail_lol)
+[2026-04-18 11:54:20]   使用邮箱: berlyn62f1ed@sw.accesswiki.net (tempmail_lol)
+[2026-04-18 11:54:21]   面板类型: v2board
+[2026-04-18 11:54:22]   登录结果: no_api
+[2026-04-18 11:54:22]   注册非JSON: /api/v1/passport/auth/register -> status=200
+[2026-04-18 11:54:22]   注册非JSON: /auth/register -> status=200
+[2026-04-18 11:54:22]   注册结果: no_api
+[2026-04-18 11:54:22] 
+--- 进度: 110/380 ---
+[2026-04-18 11:54:22]   成功: 0, 已注册: 7, CF拦截: 24, 跳过: 67, 失败: 12
+[2026-04-18 11:54:23] 
+============================================================
+[2026-04-18 11:54:23] 处理 [112] Anyland - https://anyland.xyz
+[2026-04-18 11:54:23]   邀请码: PHOMVrCA
+[2026-04-18 11:54:26]   📧 临时邮箱: annissa62f1f2@d5j.accesswiki.net (via tempmail_lol)
+[2026-04-18 11:54:26]   使用邮箱: annissa62f1f2@d5j.accesswiki.net (tempmail_lol)
+[2026-04-18 11:54:26]   面板类型: unknown
+[2026-04-18 11:54:27]   登录结果: no_api
+[2026-04-18 11:54:27]   注册非JSON: /api/v1/passport/auth/register -> status=404
+[2026-04-18 11:54:28]   注册非JSON: /auth/register -> status=404
+[2026-04-18 11:54:28]   注册非JSON: /api/v2/passport/auth/register -> status=404
+[2026-04-18 11:54:28]   注册结果: no_api
+[2026-04-18 11:54:29] 
+============================================================
+[2026-04-18 11:54:29] 处理 [113] GTK PW - https://board.gtk.pw
+[2026-04-18 11:54:29]   邀请码: PoPXZgzj
+[2026-04-18 11:54:30]   V2Board 配置: 需邮箱验证=1, 需邀请码=0
+[2026-04-18 11:54:30]   站点限制邮箱后缀: ["['gmail.com'", "'qq.com'", "'163.com'", "'yahoo.com'", "'sina.com'", "'126.com'", "'outlook.com'", "'yeah.net'", "'foxmail.com'", "'protonmail.com'", "'fastmail.com'", "'ymail.com'", "'zoho.com'", "'msn.com'", "'hotmail.com'", "'sohu.com'", "'icloud.com']"]，使用 Gmail
+[2026-04-18 11:54:30]   使用邮箱: moneyflysubssr@gmail.com (gmail)
+[2026-04-18 11:54:30]   面板类型: v2board
+[2026-04-18 11:54:31]   登录结果: login_ok
+[2026-04-18 11:54:33]   获取到 32 个套餐选项
+[2026-04-18 11:54:33]     固定流量闲时套餐 | 一次性 99.0元 | 100.0GB | 设备:0 | 带宽:50M
+[2026-04-18 11:54:33]     商务套餐 | 月付 40.0元 | 500.0GB | 设备:0 | 带宽:0M
+[2026-04-18 11:54:33]     商务套餐 | 季付 100.0元 | 500.0GB | 设备:0 | 带宽:0M
+[2026-04-18 11:54:34] 
+============================================================
+[2026-04-18 11:54:34] 处理 [114] FlyingBird 飞鸟机场 - https://fba01.fbva-hen.cc
+[2026-04-18 11:54:34]   邀请码: DLmG
+[2026-04-18 11:54:36]   📧 临时邮箱: berglund62f1fc@ry.cloudvxz.com (via tempmail_lol)
+[2026-04-18 11:54:36]   使用邮箱: berglund62f1fc@ry.cloudvxz.com (tempmail_lol)
+[2026-04-18 11:54:36]   面板类型: unknown
+[2026-04-18 11:54:38]   登录结果: no_api
+[2026-04-18 11:54:38]   注册非JSON: /api/v1/passport/auth/register -> status=200
+[2026-04-18 11:54:38]   注册非JSON: /auth/register -> status=200
+[2026-04-18 11:54:38]   注册非JSON: /api/v2/passport/auth/register -> status=200
+[2026-04-18 11:54:38]   注册结果: no_api
+[2026-04-18 11:54:39] 
+============================================================
+[2026-04-18 11:54:39] 处理 [115] ENET 机场 - https://www.easyenable.com
+[2026-04-18 11:54:39]   邀请码: Ikvt9dR8
+[2026-04-18 11:54:40]   站点不可达，跳过
+[2026-04-18 11:54:41] 
+============================================================
+[2026-04-18 11:54:41] 处理 [116] CATNET 机场 - https://0703.catnet01-c6ti90mq.top
+[2026-04-18 11:54:41]   邀请码: yqbRbGui
+[2026-04-18 11:54:42]   📧 临时邮箱: feodora62f202@hd.accesswiki.net (via tempmail_lol)
+[2026-04-18 11:54:42]   使用邮箱: feodora62f202@hd.accesswiki.net (tempmail_lol)
+[2026-04-18 11:54:43]   面板类型: cloudflare
+[2026-04-18 11:54:44]   检测到导航页，尝试提取真实 URL...
+[2026-04-18 11:54:44]   二级跳转: https://guatizi.com/go/luyuyun/
+[2026-04-18 11:54:45] 
+============================================================
+[2026-04-18 11:54:45] 处理 [117] 鹿语云 - https://www.googletagmanager.com
+[2026-04-18 11:54:48]   📧 临时邮箱: roana62f208@yu.shopsprint.org (via tempmail_lol)
+[2026-04-18 11:54:48]   使用邮箱: roana62f208@yu.shopsprint.org (tempmail_lol)
+[2026-04-18 11:54:48]   面板类型: unknown
+[2026-04-18 11:55:00]   登录超时: /auth/login
+[2026-04-18 11:55:10]   登录超时: /api/v2/passport/auth/login
+[2026-04-18 11:55:20]   登录结果: no_api
+[2026-04-18 11:55:30]   注册超时: /api/v1/passport/auth/register
+[2026-04-18 11:55:40]   注册超时: /auth/register
+[2026-04-18 11:55:50]   注册超时: /api/v2/passport/auth/register
+[2026-04-18 11:55:50]   注册结果: no_api
+[2026-04-18 11:55:51] 
+============================================================
+[2026-04-18 11:55:51] 处理 [118] 悠兔机场 - https://youtunice.com
+[2026-04-18 11:55:51]   邀请码: Di40kVJz
+[2026-04-18 11:55:54]   📧 临时邮箱: cha62f24a@y3.cloudvxz.com (via tempmail_lol)
+[2026-04-18 11:55:54]   使用邮箱: cha62f24a@y3.cloudvxz.com (tempmail_lol)
+[2026-04-18 11:55:54]   面板类型: unknown
+[2026-04-18 11:55:54]   登录结果: no_api
+[2026-04-18 11:55:54]   注册非JSON: /api/v1/passport/auth/register -> status=404
+[2026-04-18 11:55:54]   注册非JSON: /auth/register -> status=404
+[2026-04-18 11:55:54]   注册非JSON: /api/v2/passport/auth/register -> status=404
+[2026-04-18 11:55:54]   注册结果: no_api
+[2026-04-18 11:55:55] 
+============================================================
+[2026-04-18 11:55:55] 处理 [119] 扬帆云 - https://yawtt.net
+[2026-04-18 11:55:55]   邀请码: iMKVpg72
+[2026-04-18 11:55:57]   📧 临时邮箱: natassia62f24d@mx.shopsprint.org (via tempmail_lol)
+[2026-04-18 11:55:57]   使用邮箱: natassia62f24d@mx.shopsprint.org (tempmail_lol)
+[2026-04-18 11:55:58]   面板类型: unknown
+[2026-04-18 11:55:59]   登录结果: no_api
+[2026-04-18 11:55:59]   注册非JSON: /api/v1/passport/auth/register -> status=404
+[2026-04-18 11:56:00]   注册非JSON: /auth/register -> status=405
+[2026-04-18 11:56:00]   注册非JSON: /api/v2/passport/auth/register -> status=404
+[2026-04-18 11:56:00]   注册结果: no_api
+[2026-04-18 11:56:01] 
+============================================================
+[2026-04-18 11:56:01] 处理 [120] Cyber Guard - https://cyberguard.best
+[2026-04-18 11:56:01]   邀请码: ILTQCdgz
+[2026-04-18 11:56:02]   📧 临时邮箱: aleen62f252@ch.shopsprint.org (via tempmail_lol)
+[2026-04-18 11:56:02]   使用邮箱: aleen62f252@ch.shopsprint.org (tempmail_lol)
+[2026-04-18 11:56:02]   面板类型: v2board
+[2026-04-18 11:56:04]   登录结果: no_api
+[2026-04-18 11:56:04]   注册非JSON: /api/v1/passport/auth/register -> status=404
+[2026-04-18 11:56:04]   注册非JSON: /auth/register -> status=404
+[2026-04-18 11:56:04]   注册结果: no_api
+[2026-04-18 11:56:05] 
+============================================================
+[2026-04-18 11:56:05] 处理 [121] 肥猫云 - https://fcvipaffa05.cc
+[2026-04-18 11:56:05]   邀请码: QmcPwI0U
+[2026-04-18 11:56:15]   站点不可达，跳过
+[2026-04-18 11:56:15] 
+--- 进度: 120/380 ---
+[2026-04-18 11:56:15]   成功: 0, 已注册: 8, CF拦截: 25, 跳过: 75, 失败: 12
+[2026-04-18 11:56:16] 
+============================================================
+[2026-04-18 11:56:16] 处理 [122] YkkCloud - https://panel.ykkk.best
+[2026-04-18 11:56:16]   邀请码: atY9N92D
+[2026-04-18 11:56:18]   📧 临时邮箱: farmann62f262@zg.cloudvxz.com (via tempmail_lol)
+[2026-04-18 11:56:18]   使用邮箱: farmann62f262@zg.cloudvxz.com (tempmail_lol)
+[2026-04-18 11:56:18]   面板类型: cloudflare
+[2026-04-18 11:56:19] 
+============================================================
+[2026-04-18 11:56:19] 处理 [123] 飞天猪 - http://a09.ftzvipaffa02.cc
+[2026-04-18 11:56:19]   邀请码: ltSl4YJR
+[2026-04-18 11:56:20]   V2Board 配置: 需邮箱验证=0, 需邀请码=0
+[2026-04-18 11:56:20]   站点限制邮箱后缀: ["['gmail.com'", "'qq.com'", "'163.com'", "'yahoo.com'", "'sina.com'", "'126.com'", "'outlook.com'", "'yeah.net'", "'foxmail.com'", "'hotmail.com'", "'protonmail.com'", "'proton.me'", "'icloud.com'", "'mail.com'", "'live.com'", "'petromentor.com']"]，使用 Gmail
+[2026-04-18 11:56:20]   使用邮箱: moneyflysubssr@gmail.com (gmail)
+[2026-04-18 11:56:20]   面板类型: v2board
+[2026-04-18 11:56:21]   登录结果: login_ok
+[2026-04-18 11:56:23]   获取到 30 个套餐选项
+[2026-04-18 11:56:23]     节点定制 | 月付 680.0元 | 0GB | 设备:0 | 带宽:0M
+[2026-04-18 11:56:23]     节点定制 | 季付 2040.0元 | 0GB | 设备:0 | 带宽:0M
+[2026-04-18 11:56:23]     节点定制 | 半年付 4000.0元 | 0GB | 设备:0 | 带宽:0M
+[2026-04-18 11:56:24] 
+============================================================
+[2026-04-18 11:56:24] 处理 [124] Boost Net - https://boostqz.com
+[2026-04-18 11:56:24]   邀请码: 9cw25cQ8
+[2026-04-18 11:56:25]   📧 临时邮箱: zina62f269@1b.sixthirtydance.org (via tempmail_lol)
+[2026-04-18 11:56:25]   使用邮箱: zina62f269@1b.sixthirtydance.org (tempmail_lol)
+[2026-04-18 11:56:25]   面板类型: unknown
+[2026-04-18 11:56:25]   登录返回: /api/v1/passport/auth/login -> {"error": {"code": "404", "message": "The page could not be found"}}
+[2026-04-18 11:56:25]   登录结果: login_fail
+[2026-04-18 11:56:25]   注册返回: /api/v1/passport/auth/register -> {"error": {"code": "404", "message": "The page could not be found"}}
+[2026-04-18 11:56:25]   注册结果: register_fail
+[2026-04-18 11:56:26] 
+============================================================
+[2026-04-18 11:56:26] 处理 [125] Dragonfly 蜻蜓 - https://9dragonfly.com
+[2026-04-18 11:56:26]   邀请码: RK-eAQ7u3Q
+[2026-04-18 11:56:27]   📧 临时邮箱: paulita62f26b@yi.sixthirtydance.org (via tempmail_lol)
+[2026-04-18 11:56:27]   使用邮箱: paulita62f26b@yi.sixthirtydance.org (tempmail_lol)
+[2026-04-18 11:56:27]   面板类型: unknown
+[2026-04-18 11:56:28]   登录结果: no_api
+[2026-04-18 11:56:28]   注册非JSON: /api/v1/passport/auth/register -> status=404
+[2026-04-18 11:56:28]   注册非JSON: /auth/register -> status=404
+[2026-04-18 11:56:28]   注册非JSON: /api/v2/passport/auth/register -> status=404
+[2026-04-18 11:56:28]   注册结果: no_api
+[2026-04-18 11:56:29] 
+============================================================
+[2026-04-18 11:56:29] 处理 [126] E-IX 机场 - https://ap.cdn.e-ix.com
+[2026-04-18 11:56:29]   邀请码: IJVP9uMc
+[2026-04-18 11:56:30]   V2Board 配置: 需邮箱验证=1, 需邀请码=0
+[2026-04-18 11:56:30]   站点限制邮箱后缀: ["['gmail.com'", "'qq.com'", "'outlook.com'", "'hotmail.com'", "'live.com'", "'163.com'", "'126.com'", "'icloud.com'", "'yahoo.com'", "'yeah.net'", "'sina.com'", "'foxmail.com'", "'protonmail.com']"]，使用 Gmail
+[2026-04-18 11:56:30]   使用邮箱: moneyflysubssr@gmail.com (gmail)
+[2026-04-18 11:56:30]   面板类型: v2board
+[2026-04-18 11:56:30]   登录返回: /api/v1/passport/auth/login -> {"message": "Please complete the verification challenge"}
+[2026-04-18 11:56:30]   登录结果: login_fail
+[2026-04-18 11:56:30]   注册结果: need_email_code
+[2026-04-18 11:56:30]   需要邮件验证码，启动验证码流程...
+[2026-04-18 11:56:30]   验证码已发送到 moneyflysubssr@gmail.com
+[2026-04-18 11:56:30]   等待验证码邮件 (匹配域名: e-ix.com)...
+[2026-04-18 11:56:38]   找到验证码: 333333 (来自: e-ix <support@e-ix.com>)
+[2026-04-18 11:56:38]   验证码注册返回: {"message": "邮箱验证码有误"}
+[2026-04-18 11:56:39] 
+============================================================
+[2026-04-18 11:56:39] 处理 [127] AnyNet - https://anynet.me
+[2026-04-18 11:56:39]   邀请码: FpMYlLD5
+[2026-04-18 11:56:45]   📧 临时邮箱: txnz6vb879@deltajohnsons.com (via mail_tm)
+[2026-04-18 11:56:45]   使用邮箱: txnz6vb879@deltajohnsons.com (mail_tm)
+[2026-04-18 11:56:45]   面板类型: v2board
+[2026-04-18 11:56:45]   登录结果: no_api
+[2026-04-18 11:56:45]   注册非JSON: /api/v1/passport/auth/register -> status=404
+[2026-04-18 11:56:45]   注册非JSON: /auth/register -> status=404
+[2026-04-18 11:56:45]   注册结果: no_api
+[2026-04-18 11:56:46] 
+============================================================
+[2026-04-18 11:56:46] 处理 [128] WaveNebula 电波星云 - https://user.fk8w.com
+[2026-04-18 11:56:46]   邀请码: 7tMWDl1w
+[2026-04-18 11:56:53]   📧 临时邮箱: zia0ww9v2c@deltajohnsons.com (via mail_tm)
+[2026-04-18 11:56:53]   使用邮箱: zia0ww9v2c@deltajohnsons.com (mail_tm)
+[2026-04-18 11:56:53]   面板类型: unknown
+[2026-04-18 11:56:53]   登录结果: cloudflare
+[2026-04-18 11:56:54] 
+============================================================
+[2026-04-18 11:56:54] 处理 [129] 蓝莓速递 - https://berryexpress.top
+[2026-04-18 11:56:54]   邀请码: TB3mbSpM
+[2026-04-18 11:56:57]   从env.js发现API: https://grt-a.express.86-2.ae8t-8.ah-eg.agh-l34rk.868862.xyz/a3ccbfda-bb55-4fe3-805e-afac64acb5f7/berryissweet
+[2026-04-18 11:57:01]   📧 临时邮箱: yjr4wzeyka@deltajohnsons.com (via mail_tm)
+[2026-04-18 11:57:01]   使用邮箱: yjr4wzeyka@deltajohnsons.com (mail_tm)
+[2026-04-18 11:57:04]   面板类型: unknown
+[2026-04-18 11:57:04]   登录返回: /api/v1/passport/auth/login -> {"status": "fail", "message": "邮箱或密码错误", "data": null, "error": null}
+[2026-04-18 11:57:04]   登录结果: login_fail
+[2026-04-18 11:57:05]   注册结果: email_rejected
+[2026-04-18 11:57:05]   ❌ 站点拒绝了该邮箱，准备更换邮箱服务...
+[2026-04-18 11:57:05]   ⚠️ 临时邮箱服务 mail_tm 标记为不可用
+[2026-04-18 11:57:07]   📧 临时邮箱: bebyck7j6r@lnovic.com (via temp_mail_io)
+[2026-04-18 11:57:07]   🔄 邮箱被拒，尝试使用新邮箱: bebyck7j6r@lnovic.com (尝试 2/3)
+[2026-04-18 11:57:07]   注册结果: email_rejected
+[2026-04-18 11:57:07]   ❌ 站点拒绝了该邮箱，准备更换邮箱服务...
+[2026-04-18 11:57:07]   ⚠️ 临时邮箱服务 temp_mail_io 标记为不可用
+[2026-04-18 11:57:09]   📧 临时邮箱: scout.genuine.glare@throwawaymail.app (via throwawaymail_app)
+[2026-04-18 11:57:09]   🔄 邮箱被拒，尝试使用新邮箱: scout.genuine.glare@throwawaymail.app (尝试 3/3)
+[2026-04-18 11:57:09]   注册结果: email_rejected
+[2026-04-18 11:57:09]   ❌ 站点拒绝了该邮箱，准备更换邮箱服务...
+[2026-04-18 11:57:09]   ⚠️ 临时邮箱服务 throwawaymail_app 标记为不可用
+[2026-04-18 11:57:10] 
+============================================================
+[2026-04-18 11:57:10] 处理 [130] 地鼠机场 - https://nbvpn.top
+[2026-04-18 11:57:10]   邀请码: 3wUFtGx6
+[2026-04-18 11:57:12]   📧 临时邮箱: regqh5ldyjl@maildrop.cc (via maildrop_cc)
+[2026-04-18 11:57:12]   使用邮箱: regqh5ldyjl@maildrop.cc (maildrop_cc)
+[2026-04-18 11:57:12]   面板类型: v2board
+[2026-04-18 11:57:14]   登录结果: no_api
+[2026-04-18 11:57:14]   注册非JSON: /api/v1/passport/auth/register -> status=404
+[2026-04-18 11:57:14]   注册非JSON: /auth/register -> status=404
+[2026-04-18 11:57:14]   注册结果: no_api
+[2026-04-18 11:57:15] 
+============================================================
+[2026-04-18 11:57:15] 处理 [131] 省钱机场 - https://xn--mes358ag1lu22a.com
+[2026-04-18 11:57:15]   邀请码: AOXcP4Ph
+[2026-04-18 11:57:18]   📧 临时邮箱: reg81o7d9kk@maildrop.cc (via maildrop_cc)
+[2026-04-18 11:57:18]   使用邮箱: reg81o7d9kk@maildrop.cc (maildrop_cc)
+[2026-04-18 11:57:18]   面板类型: v2board
+[2026-04-18 11:57:19]   登录结果: no_api
+[2026-04-18 11:57:19]   注册非JSON: /api/v1/passport/auth/register -> status=404
+[2026-04-18 11:57:19]   注册非JSON: /auth/register -> status=404
+[2026-04-18 11:57:19]   注册结果: no_api
+[2026-04-18 11:57:19] 
+--- 进度: 130/380 ---
+[2026-04-18 11:57:19]   成功: 0, 已注册: 9, CF拦截: 27, 跳过: 79, 失败: 15
+[2026-04-18 11:57:20] 
+============================================================
+[2026-04-18 11:57:20] 处理 [132] 维度云 - https://weidu.io
+[2026-04-18 11:57:20]   邀请码: uuxWk79E
+[2026-04-18 11:57:22]   📧 临时邮箱: regzrgqmwyj@maildrop.cc (via maildrop_cc)
+[2026-04-18 11:57:22]   使用邮箱: regzrgqmwyj@maildrop.cc (maildrop_cc)
+[2026-04-18 11:57:22]   面板类型: v2board
+[2026-04-18 11:57:22]   登录结果: no_api
+[2026-04-18 11:57:23]   注册非JSON: /api/v1/passport/auth/register -> status=404
+[2026-04-18 11:57:23]   注册非JSON: /auth/register -> status=404
+[2026-04-18 11:57:23]   注册结果: no_api
+[2026-04-18 11:57:24] 
+============================================================
+[2026-04-18 11:57:24] 处理 [133] V2ge - https://a.v2ge.me
+[2026-04-18 11:57:24]   邀请码: vg2hcSWq
+[2026-04-18 11:57:29]   V2Board 配置: 需邮箱验证=1, 需邀请码=0
+[2026-04-18 11:57:29]   站点限制邮箱后缀: ["['gmail.com'", "'qq.com'", "'163.com'", "'yahoo.com'", "'sina.com'", "'126.com'", "'outlook.com'", "'yeah.net'", "'foxmail.com']"]，使用 Gmail
+[2026-04-18 11:57:29]   使用邮箱: moneyflysubssr@gmail.com (gmail)
+[2026-04-18 11:57:29]   面板类型: v2board
+[2026-04-18 11:57:29]   登录结果: login_ok
+[2026-04-18 11:57:30]   订阅域名: ttt-fhdcaqbigu.cn-shenzhen.fcapp.run
+[2026-04-18 11:57:33]   成功提取并保存了 13 个节点
+[2026-04-18 11:57:34]   获取到 22 个套餐选项
+[2026-04-18 11:57:34]     基础版 | 月付 10.0元 | 20.0GB | 设备:0 | 带宽:0M
+[2026-04-18 11:57:34]     基础版 | 季付 28.5元 | 20.0GB | 设备:0 | 带宽:0M
+[2026-04-18 11:57:34]     基础版 | 半年付 54.0元 | 20.0GB | 设备:0 | 带宽:0M
+[2026-04-18 11:57:35] 
+============================================================
+[2026-04-18 11:57:35] 处理 [134] Nachoneko - https://nachoneko.cc
+[2026-04-18 11:57:35]   邀请码: DPdIrBsC
+[2026-04-18 11:57:37]   📧 临时邮箱: reg6f75kq7d@maildrop.cc (via maildrop_cc)
+[2026-04-18 11:57:37]   使用邮箱: reg6f75kq7d@maildrop.cc (maildrop_cc)
+[2026-04-18 11:57:37]   面板类型: unknown
+[2026-04-18 11:57:38]   登录结果: no_api
+[2026-04-18 11:57:39]   注册非JSON: /api/v1/passport/auth/register -> status=404
+[2026-04-18 11:57:39]   注册非JSON: /auth/register -> status=404
+[2026-04-18 11:57:39]   注册非JSON: /api/v2/passport/auth/register -> status=404
+[2026-04-18 11:57:39]   注册结果: no_api
+[2026-04-18 11:57:40] 
+============================================================
+[2026-04-18 11:57:40] 处理 [135] 茶艺云 - https://cloud.teaartcloud.com
+[2026-04-18 11:57:40]   邀请码: RV6xMOtm
+[2026-04-18 11:57:42]   📧 临时邮箱: regl4q30fkv@maildrop.cc (via maildrop_cc)
+[2026-04-18 11:57:42]   使用邮箱: regl4q30fkv@maildrop.cc (maildrop_cc)
+[2026-04-18 11:57:42]   面板类型: v2board
+[2026-04-18 11:57:43]   从JS发现API地址: https://blog.xn--9kq787jdqa.online/api/v1
+[2026-04-18 11:57:44]   登录返回: /api/v1/passport/auth/login -> {"message": "The route api/v1/api/v1/passport/auth/login could not be found."}
+[2026-04-18 11:57:44]   使用JS发现的API: https://blog.xn--9kq787jdqa.online/api/v1
+[2026-04-18 11:57:44]   登录结果: login_fail
+[2026-04-18 11:57:44]   注册返回: /api/v1/passport/auth/register -> {"message": "The route api/v1/api/v1/passport/auth/register could not be found."}
+[2026-04-18 11:57:44]   注册结果: register_fail
+[2026-04-18 11:57:45] 
+============================================================
+[2026-04-18 11:57:45] 处理 [136] 滕王阁机场 - https://twg520.com
+[2026-04-18 11:57:45]   邀请码: qfrq9M25
+[2026-04-18 11:57:46]   📧 临时邮箱: regq7siysen@maildrop.cc (via maildrop_cc)
+[2026-04-18 11:57:46]   使用邮箱: regq7siysen@maildrop.cc (maildrop_cc)
+[2026-04-18 11:57:47]   面板类型: cloudflare
+[2026-04-18 11:57:48] 
+============================================================
+[2026-04-18 11:57:48] 处理 [137] Danke Cloud - https://a10.danke.sbs
+[2026-04-18 11:57:48]   邀请码: rLnJD5a2
+[2026-04-18 11:57:50]   📧 临时邮箱: bibbye62f2be@cc.sixthirtydance.org (via tempmail_lol)
+[2026-04-18 11:57:50]   使用邮箱: bibbye62f2be@cc.sixthirtydance.org (tempmail_lol)
+[2026-04-18 11:57:50]   面板类型: v2board
+[2026-04-18 11:57:52]   登录结果: no_api
+[2026-04-18 11:57:53]   注册非JSON: /api/v1/passport/auth/register -> status=404
+[2026-04-18 11:57:53]   注册非JSON: /auth/register -> status=404
+[2026-04-18 11:57:53]   注册结果: no_api
+[2026-04-18 11:57:54]   检测到导航页，尝试提取真实 URL...
+[2026-04-18 11:57:54] 
+============================================================
+[2026-04-18 11:57:54] 处理 [138] 凌速加速器 / LingSpeed - https://www.googletagmanager.com
+[2026-04-18 11:58:02]   📧 临时邮箱: angie62f2ca@le.accesswiki.net (via tempmail_lol)
+[2026-04-18 11:58:02]   使用邮箱: angie62f2ca@le.accesswiki.net (tempmail_lol)
+[2026-04-18 11:58:03]   面板类型: unknown
+[2026-04-18 11:58:13]   登录超时: /auth/login
+[2026-04-18 11:58:17]   登录结果: no_api
+[2026-04-18 11:58:18]   注册非JSON: /api/v1/passport/auth/register -> status=404
+[2026-04-18 11:58:28]   注册超时: /auth/register
+[2026-04-18 11:58:38]   注册超时: /api/v2/passport/auth/register
+[2026-04-18 11:58:38]   注册结果: no_api
+[2026-04-18 11:58:39] 
+============================================================
+[2026-04-18 11:58:39] 处理 [139] FlyBit - https://goflybit.com
+[2026-04-18 11:58:39]   邀请码: 78E34u9V
+[2026-04-18 11:58:41]   📧 临时邮箱: bertha62f2f1@h7.hush2u.com (via tempmail_lol)
+[2026-04-18 11:58:41]   使用邮箱: bertha62f2f1@h7.hush2u.com (tempmail_lol)
+[2026-04-18 11:58:41]   面板类型: cloudflare
+[2026-04-18 11:58:42] 
+============================================================
+[2026-04-18 11:58:42] 处理 [140] 表哥云 - https://biaoge.us
+[2026-04-18 11:58:42]   邀请码: JnaSNApe
+[2026-04-18 11:58:43]   📧 临时邮箱: halette62f2f3@9.tohal.org (via tempmail_lol)
+[2026-04-18 11:58:43]   使用邮箱: halette62f2f3@9.tohal.org (tempmail_lol)
+[2026-04-18 11:58:43]   面板类型: unknown
+[2026-04-18 11:58:44]   登录结果: no_api
+[2026-04-18 11:58:44]   注册非JSON: /api/v1/passport/auth/register -> status=405
+[2026-04-18 11:58:45]   注册非JSON: /auth/register -> status=405
+[2026-04-18 11:58:45]   注册非JSON: /api/v2/passport/auth/register -> status=405
+[2026-04-18 11:58:45]   注册结果: no_api
+[2026-04-18 11:58:46] 
+============================================================
+[2026-04-18 11:58:46] 处理 [141] 狮子云 - https://dash.shizi.in
+[2026-04-18 11:58:46]   邀请码: DKBxnL7Q
+[2026-04-18 11:58:47]   📧 临时邮箱: deeann62f2f7@ft.hush2u.com (via tempmail_lol)
+[2026-04-18 11:58:47]   使用邮箱: deeann62f2f7@ft.hush2u.com (tempmail_lol)
+[2026-04-18 11:58:47]   面板类型: unknown
+[2026-04-18 11:58:48]   登录结果: no_api
+[2026-04-18 11:58:48]   注册非JSON: /api/v1/passport/auth/register -> status=405
+[2026-04-18 11:58:49]   注册非JSON: /auth/register -> status=405
+[2026-04-18 11:58:49]   注册非JSON: /api/v2/passport/auth/register -> status=405
+[2026-04-18 11:58:49]   注册结果: no_api
+[2026-04-18 11:58:49] 
+--- 进度: 140/380 ---
+[2026-04-18 11:58:49]   成功: 0, 已注册: 10, CF拦截: 29, 跳过: 85, 失败: 16
+[2026-04-18 11:58:50] 
+============================================================
+[2026-04-18 11:58:50] 处理 [142] 蓝莓桥 - https://berrypass.net
+[2026-04-18 11:58:50]   邀请码: MWJc9hyM
+[2026-04-18 11:58:53]   从env.js发现API: https://grt-a.htj5o5i.86-2.ae8t-8.ah-eg.agh-l34rk.868862.xyz/a3ccbfda-bb55-4fe3-805e-afac64acb5f7/berryissweet
+[2026-04-18 11:58:53]   📧 临时邮箱: noni62f2fd@6t.tohal.org (via tempmail_lol)
+[2026-04-18 11:58:53]   使用邮箱: noni62f2fd@6t.tohal.org (tempmail_lol)
+[2026-04-18 11:58:55]   面板类型: unknown
+[2026-04-18 11:58:56]   登录返回: /api/v1/passport/auth/login -> {"status": "fail", "message": "邮箱或密码错误", "data": null, "error": null}
+[2026-04-18 11:58:56]   登录结果: login_fail
+[2026-04-18 11:58:56]   注册结果: email_rejected
+[2026-04-18 11:58:56]   ❌ 站点拒绝了该邮箱，准备更换邮箱服务...
+[2026-04-18 11:58:56]   ⚠️ 临时邮箱服务 tempmail_lol 标记为不可用
+[2026-04-18 11:58:56]   📧 临时邮箱: reg59orbd61@maildrop.cc (via maildrop_cc)
+[2026-04-18 11:58:56]   🔄 邮箱被拒，尝试使用新邮箱: reg59orbd61@maildrop.cc (尝试 2/3)
+[2026-04-18 11:58:57]   注册结果: email_rejected
+[2026-04-18 11:58:57]   ❌ 站点拒绝了该邮箱，准备更换邮箱服务...
+[2026-04-18 11:58:57]   ⚠️ 临时邮箱服务 maildrop_cc 标记为不可用
+[2026-04-18 11:58:57]   📧 临时邮箱: kztufftj@guerrillamailblock.com (via guerrillamail)
+[2026-04-18 11:58:57]   🔄 邮箱被拒，尝试使用新邮箱: kztufftj@guerrillamailblock.com (尝试 3/3)
+[2026-04-18 11:58:58]   注册结果: email_rejected
+[2026-04-18 11:58:58]   ❌ 站点拒绝了该邮箱，准备更换邮箱服务...
+[2026-04-18 11:58:58]   ⚠️ 临时邮箱服务 guerrillamail 标记为不可用
+[2026-04-18 11:58:59] 
+============================================================
+[2026-04-18 11:58:59] 处理 [143] 迅达 VPN - https://sulianproxy.com
+[2026-04-18 11:58:59]   邀请码: qRRAlOD9
+[2026-04-18 11:59:01]   📧 临时邮箱: 087xwx7a50@mailpwr.com (via dropmail_me)
+[2026-04-18 11:59:01]   使用邮箱: 087xwx7a50@mailpwr.com (dropmail_me)
+[2026-04-18 11:59:01]   面板类型: v2board
+[2026-04-18 11:59:02]   登录结果: no_api
+[2026-04-18 11:59:02]   注册非JSON: /api/v1/passport/auth/register -> status=405
+[2026-04-18 11:59:02]   注册非JSON: /auth/register -> status=405
+[2026-04-18 11:59:02]   注册结果: no_api
+[2026-04-18 11:59:03] 
+============================================================
+[2026-04-18 11:59:03] 处理 [144] 团子猫通信 - https://dash.tuanzimao.net
+[2026-04-18 11:59:03]   邀请码: 9hxIbhfl
+[2026-04-18 11:59:04]   V2Board 配置: 需邮箱验证=1, 需邀请码=0
+[2026-04-18 11:59:04]   站点限制邮箱后缀: ["['gmail.com'", "'qq.com'", "'163.com'", "'outlook.com'", "'foxmail.com'", "'126.com'", "'yeah.net'", "'hotmail.com'", "'icloud.com'", "'sina.com'", "'aliyun.com'", "'139.com'", "'live.com'", "'protonmail.com'", "'proton.me'", "'yahoo.com'", "'sohu.com'", "'me.com'", "'mac.com']"]，使用 Gmail
+[2026-04-18 11:59:04]   使用邮箱: moneyflysubssr@gmail.com (gmail)
+[2026-04-18 11:59:04]   面板类型: v2board
+[2026-04-18 11:59:05]   登录结果: login_ok
+[2026-04-18 11:59:05]   订阅域名: sub-tuanzimao.260311.xyz
+[2026-04-18 11:59:06]   获取订阅连接 [https://sub-tuanzimao.260311.xyz/s/50efc9866850430e72832896325c4524] 失败: 服务端返回空内容
+[2026-04-18 11:59:07]   获取到 16 个套餐选项
+[2026-04-18 11:59:07]     50G流量 | 月付 8.0元 | 50.0GB | 设备:5 | 带宽:1000M
+[2026-04-18 11:59:07]     50G流量 | 季付 22.0元 | 50.0GB | 设备:5 | 带宽:1000M
+[2026-04-18 11:59:07]     50G流量 | 半年付 36.0元 | 50.0GB | 设备:5 | 带宽:1000M
+[2026-04-18 11:59:08] 
+============================================================
+[2026-04-18 11:59:08] 处理 [145] Neko Cloud - https://my.nekocloud.top
+[2026-04-18 11:59:08]   邀请码: T37z4XoD
+[2026-04-18 11:59:10]   📧 临时邮箱: dyhiw0masam2@picomail.biz (via dropmail_me)
+[2026-04-18 11:59:10]   使用邮箱: dyhiw0masam2@picomail.biz (dropmail_me)
+[2026-04-18 11:59:10]   面板类型: v2board
+[2026-04-18 11:59:10]   从JS发现API地址: https://user.nekocloud.top/api/v1
+[2026-04-18 11:59:11]   登录返回: /api/v1/passport/auth/login -> {"message": "The route api/v1/api/v1/passport/auth/login could not be found."}
+[2026-04-18 11:59:11]   使用JS发现的API: https://user.nekocloud.top/api/v1
+[2026-04-18 11:59:11]   登录结果: login_fail
+[2026-04-18 11:59:11]   注册返回: /api/v1/passport/auth/register -> {"message": "The route api/v1/api/v1/passport/auth/register could not be found."}
+[2026-04-18 11:59:11]   注册结果: register_fail
+[2026-04-18 11:59:12] 
+============================================================
+[2026-04-18 11:59:12] 处理 [146] Phantom - https://pin.dianping.men
+[2026-04-18 11:59:12]   邀请码: KjGTJNgb
+[2026-04-18 11:59:14]   📧 临时邮箱: wmedwygao@emlpro.com (via dropmail_me)
+[2026-04-18 11:59:14]   使用邮箱: wmedwygao@emlpro.com (dropmail_me)
+[2026-04-18 11:59:14]   面板类型: v2board
+[2026-04-18 11:59:15]   登录结果: no_api
+[2026-04-18 11:59:15]   注册非JSON: /api/v1/passport/auth/register -> status=405
+[2026-04-18 11:59:15]   注册非JSON: /auth/register -> status=405
+[2026-04-18 11:59:15]   注册结果: no_api
+[2026-04-18 11:59:16] 
+============================================================
+[2026-04-18 11:59:16] 处理 [147] SSONE - https://hello-ssone.com
+[2026-04-18 11:59:16]   邀请码: 3Ypczm9L
+[2026-04-18 11:59:18]   📧 临时邮箱: vypimigik1m3@picomail.biz (via dropmail_me)
+[2026-04-18 11:59:18]   使用邮箱: vypimigik1m3@picomail.biz (dropmail_me)
+[2026-04-18 11:59:18]   面板类型: unknown
+[2026-04-18 11:59:19]   登录结果: no_api
+[2026-04-18 11:59:19]   注册非JSON: /api/v1/passport/auth/register -> status=200
+[2026-04-18 11:59:19]   注册非JSON: /auth/register -> status=200
+[2026-04-18 11:59:19]   注册非JSON: /api/v2/passport/auth/register -> status=200
+[2026-04-18 11:59:19]   注册结果: no_api
+[2026-04-18 11:59:20]   检测到导航页，尝试提取真实 URL...
+[2026-04-18 11:59:21]   二级跳转: https://guatizi.com/go/xingbi/
+[2026-04-18 11:59:24] 
+============================================================
+[2026-04-18 11:59:24] 处理 [148] 星币机场 - https://www.googletagmanager.com
+[2026-04-18 11:59:34]   📧 临时邮箱: jrpjdmkfn@emlhub.com (via dropmail_me)
+[2026-04-18 11:59:34]   使用邮箱: jrpjdmkfn@emlhub.com (dropmail_me)
+[2026-04-18 11:59:34]   面板类型: unknown
+[2026-04-18 11:59:45]   登录超时: /auth/login
+[2026-04-18 11:59:55]   登录超时: /api/v2/passport/auth/login
+[2026-04-18 12:00:05]   登录结果: no_api
+[2026-04-18 12:00:15]   注册超时: /api/v1/passport/auth/register
