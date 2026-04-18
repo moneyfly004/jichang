@@ -1302,41 +1302,84 @@ def fetch_plans(base_url, headers, session, token, panel_type="unknown"):
                 if p.get("sell") is False or p.get("show") is False:
                     continue
                 name = p.get("name", "未知套餐")
+                plan_id = p.get("id")
                 traffic_gb = parse_traffic_gb(p.get("transfer_enable", 0))
                 device_limit = p.get("device_limit") or 0
                 speed_limit = p.get("speed_limit") or 0  # Mbps
                 for price_key, months in PERIOD_MONTHS.items():
-                    if months == 0:
-                        # onetime_price：一次性付费，不计算月价
-                        onetime = convert_price_to_yuan(p.get(price_key))
-                        if onetime and onetime > 0:
-                            plans.append({
-                                "name": name, "price": onetime, "period": "一次性",
-                                "months": 0, "monthly_price": 0,
-                                "traffic_gb": traffic_gb, "device_limit": device_limit,
-                                "speed_limit": speed_limit,
-                            })
-                        continue
                     price_yuan = convert_price_to_yuan(p.get(price_key))
-                    if price_yuan is None or price_yuan <= 0:
+                    if price_yuan is None:
                         continue
-                    monthly = round(price_yuan / months, 2)
+                    
+                    if months == 0:
+                        # onetime_price：一次性付费
+                        plans.append({
+                            "id": plan_id, "name": name, "price": price_yuan, "period": "一次性",
+                            "months": 0, "monthly_price": 0,
+                            "traffic_gb": traffic_gb, "device_limit": device_limit,
+                            "speed_limit": speed_limit,
+                            "price_key": price_key
+                        })
+                        continue
+                        
+                    monthly = round(price_yuan / months, 2) if months > 0 else 0
                     period_name = {1:"月付",3:"季付",6:"半年付",12:"年付",24:"两年付",36:"三年付"}.get(months, f"{months}月")
                     plans.append({
-                        "name": name, "price": price_yuan, "period": period_name,
+                        "id": plan_id, "name": name, "price": price_yuan, "period": period_name,
                         "months": months, "monthly_price": monthly,
                         "traffic_gb": traffic_gb, "device_limit": device_limit,
                         "speed_limit": speed_limit,
+                        "price_key": price_key
                     })
             if plans:
-                log(f"  获取到 {len(plans)} 个套餐选项")
-                # 打印关键套餐信息以便验证
-                for pl in plans[:3]:
-                    log(f"    {pl['name']} | {pl['period']} {pl['price']}元 | {pl['traffic_gb']}GB | 设备:{pl['device_limit']} | 带宽:{pl['speed_limit']}M")
                 return plans
         except Exception:
             pass
+    return plans
 
+def auto_buy_free_plan(base_url, headers, session, token):
+    """
+    尝试自动订购 0 元试用套餐以激活链接
+    """
+    auth_headers = headers.copy()
+    if token:
+        if str(token).lower().startswith("bearer"):
+            auth_headers["Authorization"] = token
+        else:
+            auth_headers["Authorization"] = f"Bearer {token}"
+            
+    plans = fetch_plans(base_url, headers, session, token)
+    # 筛选价格为 0 的套餐
+    free_plans = [p for p in plans if p['price'] == 0]
+    
+    if not free_plans:
+        return False
+        
+    target = free_plans[0]
+    log(f"  [*] 发现 0 元试用套餐: {target['name']} (ID: {target['id']}, 周期: {target['period']})，正在尝试自动订购...")
+    
+    order_urls = [
+        f"{base_url}/api/v1/user/order/save",
+        f"{base_url}/api/v1/user/order/saveOrder"
+    ]
+    
+    for url in order_urls:
+        try:
+            payload = {
+                "plan_id": target["id"],
+                "period": target.get("price_key", "month_price"), # V2Board 通常提交价格字段名作为 period
+                "coupon_code": ""
+            }
+            resp = session.post(url, headers=auth_headers, json=payload, timeout=TIMEOUT)
+            if resp.status_code == 200:
+                log(f"  [+] 试用套餐订购成功 (HTTP 200)")
+                return True
+            else:
+                log(f"  [-] 订购失败 (HTTP {resp.status_code}): {resp.text[:100]}")
+        except Exception as e:
+            log(f"  [-] 订购尝试异常: {e}")
+            
+    return False
     if panel_type == "sspanel":
         try:
             resp = session.get(base_url + "/user/shop", headers=auth_headers, timeout=TIMEOUT)
@@ -1604,7 +1647,14 @@ def process_site(row_num, name, url, panel_type_hint):
             result["subscribe_url"] = sub["subscribe_url"]
             result["subscribe_domain"] = sub["subscribe_domain"]
             log(f"  订阅域名: {sub['subscribe_domain']}")
-            fetch_and_save_nodes(sub["subscribe_url"], name, session)
+            # 尝试先取一次数据
+            count = fetch_and_save_nodes(sub["subscribe_url"], name, session)
+            if count == 0:
+                # 没取到节点，尝试自动订购 0 元试用
+                if auto_buy_free_plan(base_url, headers, session, token):
+                    log(f"  [*] 订购已触发，再次尝试采集节点...")
+                    time.sleep(2)
+                    fetch_and_save_nodes(sub["subscribe_url"], name, session)
         result["plans"] = fetch_plans(base_url, headers, session, token, panel_type)
         return result
 
@@ -1698,12 +1748,20 @@ def process_site(row_num, name, url, panel_type_hint):
 
     if reg_result["status"] == "register_ok":
         result["status"] = "注册成功"
-        sub = extract_subscription(base_url, headers, session, reg_result.get("token"))
+        token = reg_result.get("token")
+        sub = extract_subscription(base_url, headers, session, token)
         if sub:
             result["subscribe_url"] = sub["subscribe_url"]
             result["subscribe_domain"] = sub["subscribe_domain"]
-            fetch_and_save_nodes(sub["subscribe_url"], name, session)
-        result["plans"] = fetch_plans(base_url, headers, session, reg_result.get("token"), panel_type)
+            # 尝试先取一次数据
+            count = fetch_and_save_nodes(sub["subscribe_url"], name, session)
+            if count == 0:
+                if auto_buy_free_plan(base_url, headers, session, token):
+                    log(f"  [*] 试用套餐订购成功，重新获取节点...")
+                    time.sleep(2)
+                    fetch_and_save_nodes(sub["subscribe_url"], name, session)
+                    
+        result["plans"] = fetch_plans(base_url, headers, session, token, panel_type)
         return result
 
     if reg_result["status"] == "no_api":
