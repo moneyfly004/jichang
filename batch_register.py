@@ -1015,11 +1015,6 @@ def try_register_with_tos_retry(base_url, headers, session, email, invite_code="
         log(f"  TOS重试异常: {e}")
     return {"status": "register_fail"}
 
-def fetch_and_save_nodes(sub_url, site_name="未知"):
-    """请求订阅链接并提取节点保存到本地"""
-    if not sub_url:
-        return 0
-
 def convert_clash_proxy_to_uri(proxy):
     """
     将 Clash 格式的代理字典逆向转换为标准 URI 链接
@@ -1074,7 +1069,7 @@ def convert_clash_proxy_to_uri(proxy):
         pass
     return None
 
-def extract_and_save_nodes(sub_url, site_name):
+def fetch_and_save_nodes(sub_url, site_name):
     if not sub_url:
         return 0
     try:
