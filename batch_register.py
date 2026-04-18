@@ -1045,9 +1045,17 @@ def fetch_and_save_nodes(sub_url, site_name="未知"):
                 nodes.append(line)
         
         if nodes:
-            with open(NODES_OUTPUT_FILE, "a+", encoding="utf-8") as f:
-                f.write(f"\\n# === {site_name} | {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} ===\\n")
-                f.write("\\n".join(nodes) + "\\n")
+            with log_lock:  # 使用统一锁防止并发写入乱序
+                with open(NODES_OUTPUT_FILE, "a+", encoding="utf-8") as f:
+                    # 确保文件末尾有换行后再追加
+                    f.seek(0, 2)
+                    if f.tell() > 0:
+                        f.seek(f.tell() - 1)
+                        if f.read(1) != '\n':
+                            f.write('\n')
+                    
+                    f.write(f"# === {site_name} | {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} ===\n")
+                    f.write("\n".join(nodes) + "\n")
             log(f"  成功提取并保存了 {len(nodes)} 个节点")
             return len(nodes)
         else:
