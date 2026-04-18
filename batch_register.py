@@ -1877,8 +1877,12 @@ def main():
                 unique_nodes.append(l_strip) # 保留注释
         
         all_nodes_collected = "\n".join(unique_nodes)
-        with open(NODES_OUTPUT_FILE, "w", encoding="utf-8") as f:
-            f.write(all_nodes_collected + "\n")
+        if unique_nodes:
+            with open(NODES_OUTPUT_FILE, "w", encoding="utf-8") as f:
+                f.write(all_nodes_collected + "\n")
+            log(f"[*] 节点池去重完成，当前保留有效节点: {len([l for l in unique_nodes if '://' in l])} 个")
+        else:
+            log("[!] 未在此周期内捕获到新节点，保留原有库容。")
             
     generate_clash_config(all_nodes_collected)
 
