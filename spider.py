@@ -3,6 +3,7 @@ import re
 import csv
 import os
 import time
+import random
 from urllib.parse import urlparse
 
 # 定义抓取配置和路径
@@ -38,6 +39,25 @@ BLACKLIST_DOMAINS = [
     "passwordmonster.com", "v2board.com", "cloudflare.com", "gmail.com",
     "qq.com"
 ]
+
+# 随机 User-Agent 池
+USER_AGENTS = [
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36",
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36",
+    "Mozilla/5.0 (iPhone; CPU iPhone OS 17_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1 Mobile/15E148 Safari/604.1",
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/115.0",
+    "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)",
+    "Mozilla/5.0 (compatible; Bingbot/2.0; +http://www.bing.com/bingbot.htm)"
+]
+
+def get_random_headers():
+    return {
+        "User-Agent": random.choice(USER_AGENTS),
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+        "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8",
+        "Referer": "https://www.google.com/"
+    }
 
 def load_existing_db():
     sites = {}
@@ -96,7 +116,7 @@ def extract_valid_urls(text):
 
 def scrape_telegram(channel):
     url = f"https://t.me/s/{channel}"
-    headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"}
+    headers = get_random_headers()
     print(f"[*] 侦听 Telegram 频道: {channel}...")
     try:
         r = requests.get(url, headers=headers, timeout=10)
@@ -109,7 +129,7 @@ def scrape_telegram(channel):
     return set()
 
 def scrape_github(raw_url):
-    headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"}
+    headers = get_random_headers()
     print(f"[*] 侦听 Github 资源库: {raw_url.split('/')[-1]}...")
     try:
         r = requests.get(raw_url, headers=headers, timeout=10)

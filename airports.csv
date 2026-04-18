@@ -1,7 +1,7 @@
 name,url,panel_type,fail_count,last_status
-WgetCloud 全球加速,https://b8cfff2a4jquxdbmwbaj.wgetcloud.org/register?code=kSIN,,0,unknown
-Viking Links,https://feeds.viking-links.tech/#/login?code=MaFTn476,,0,unknown
-FlowerCloud 花云,https://api-flowercloud.com/aff.php?aff=17304,,0,unknown
+WgetCloud 全球加速,https://b8cfff2a4jquxdbmwbaj.wgetcloud.org/register?code=kSIN,,0,跳过-Cloudflare
+Viking Links,https://feeds.viking-links.tech/#/login?code=MaFTn476,,0,已注册-登录成功
+FlowerCloud 花云,https://api-flowercloud.com/aff.php?aff=17304,,0,跳过-Cloudflare
 肯の机,https://kendeji.io/#/auth?invite=uuS2dmVh,,0,unknown
 SkyLinX,https://portal.skylinx.org/#/register?code=r36VyThv,,0,unknown
 EdNovas 云,https://ednovas.org/#/register?code=CO0gJK0M,,0,unknown

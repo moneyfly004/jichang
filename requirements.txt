@@ -2,3 +2,4 @@ cloudscraper
 requests
 openpyxl
 beautifulsoup4
+pyyaml

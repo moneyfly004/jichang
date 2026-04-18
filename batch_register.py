@@ -25,6 +25,9 @@ import string
 from bs4 import BeautifulSoup
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
+from concurrent.futures import ThreadPoolExecutor, as_completed
+import threading
+import yaml
 
 # ============ 配置 (支持从环境变量加载) ============
 # 支持云端 Github Actions，配置默认留在本地开发用
@@ -35,6 +38,11 @@ START_FROM = int(os.environ.get("START_FROM", 0))
 OUTPUT_EXCEL = os.environ.get("OUTPUT_EXCEL", "/Users/apple/Downloads/shell/注册结果.xlsx")
 LOG_FILE = os.environ.get("LOG_FILE", "/Users/apple/Downloads/shell/register_log.txt")
 NODES_OUTPUT_FILE = os.environ.get("NODES_OUTPUT_FILE", "/Users/apple/Downloads/shell/all_nodes.txt")
+CLASH_OUTPUT_FILE = os.environ.get("CLASH_OUTPUT_FILE", "/Users/apple/Downloads/shell/clash_config.yaml")
+
+# 线程锁，确保多线程下日志和数据写入不乱序
+stats_lock = threading.Lock()
+log_lock = threading.Lock()
 
 REG_EMAIL = os.environ.get("REG_EMAIL", "moneyflysubssr@gmail.com")
 REG_PASSWORD = os.environ.get("REG_PASSWORD", "Sikeming001@")
@@ -63,11 +71,12 @@ _FAILED_SERVICES = set()
 
 # ============ 日志 ============
 def log(msg):
-    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    line = f"[{timestamp}] {msg}"
-    print(line)
-    with open(LOG_FILE, "a", encoding="utf-8") as f:
-        f.write(line + "\n")
+    now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    formatted_msg = f"[{now}] {msg}"
+    with log_lock:
+        print(formatted_msg)
+        with open(LOG_FILE, "a", encoding="utf-8") as f:
+            f.write(formatted_msg + "\n")
 
 # ============ 工具函数 ============
 def extract_base_url(url):
@@ -1302,6 +1311,114 @@ def generate_plan_analysis(all_plans_data):
     log(f"  全部套餐: {sum(len(i['plans']) for i in all_plans_data)} 条, 涉及 {len(all_plans_data)} 个站点")
 
 
+def generate_clash_config(all_nodes_text):
+    """
+    将提取的所有节点链接转换为 Clash 配置文件
+    """
+    proxies = []
+    lines = (all_nodes_text or "").split('\n')
+    
+    # 简单的解析逻辑，将 vmess/vless/ss 转换为 Clash 字典
+    # 注意：这里仅作基础转换示例
+    for line in lines:
+        line = line.strip()
+        if not line or "://" not in line:
+            continue
+        
+        try:
+            if line.startswith("vmess://"):
+                # 简单解析 vmess (Base64)
+                data_b64 = line[8:]
+                # 补足 padding
+                data_b64 += "=" * ((4 - len(data_b64) % 4) % 4)
+                data = base64.b64decode(data_b64).decode('utf-8', errors='ignore')
+                js = json.loads(data)
+                node = {
+                    "name": js.get("ps", f"vmess-{random.randint(100,999)}"),
+                    "type": "vmess",
+                    "server": js.get("add"),
+                    "port": int(js.get("port", 443)),
+                    "uuid": js.get("id"),
+                    "alterId": int(js.get("aid", 0)),
+                    "cipher": "auto",
+                    "udp": True,
+                    "tls": True if js.get("tls") == "tls" else False,
+                    "skip-cert-verify": True,
+                    "network": js.get("net", "tcp")
+                }
+                if js.get("net") == "ws":
+                    node["ws-opts"] = {"path": js.get("path", "/"), "headers": {"Host": js.get("host", js.get("add"))}}
+                proxies.append(node)
+                
+            elif line.startswith("vless://"):
+                # 简单解析 vless
+                parsed = urlparse(line)
+                user_info = parsed.netloc.split("@")
+                uuid = user_info[0]
+                server_port = user_info[1].split(":")
+                params = parse_qs(parsed.query)
+                node = {
+                    "name": re.sub(r'[^\w\s-]', '', urllib.parse.unquote(parsed.fragment)) if parsed.fragment else f"vless-{random.randint(100,999)}",
+                    "type": "vless",
+                    "server": server_port[0],
+                    "port": int(server_port[1]),
+                    "uuid": uuid,
+                    "cipher": "none",
+                    "tls": True if params.get("security", [""])[0] in ["tls", "reality"] else False,
+                    "udp": True,
+                    "skip-cert-verify": True,
+                    "network": params.get("type", ["tcp"])[0]
+                }
+                proxies.append(node)
+            
+            elif line.startswith("ss://"):
+                # 简单解析 ss (处理带 fragment 的情况)
+                parsed = urlparse(line)
+                node = {
+                    "name": urllib.parse.unquote(parsed.fragment) if parsed.fragment else f"ss-{random.randint(100,999)}",
+                    "type": "ss",
+                    "server": parsed.hostname,
+                    "port": parsed.port,
+                    "cipher": "aes-256-gcm", # 默认占位
+                    "password": "password"    # 默认占位
+                }
+                proxies.append(node)
+        except:
+            continue
+
+    if not proxies:
+        return
+
+    # Clash 完整配置模板
+    config = {
+        "port": 7890,
+        "socks-port": 7891,
+        "allow-lan": True,
+        "mode": "rule",
+        "log-level": "info",
+        "proxies": proxies,
+        "proxy-groups": [
+            {"name": "🚀 节点选择", "type": "select", "proxies": ["♻️ 自动选择", "🎯 全球均衡"] + [p["name"] for p in proxies]},
+            {"name": "♻️ 自动选择", "type": "url-test", "url": "http://www.gstatic.com/generate_204", "interval": 300, "proxies": [p["name"] for p in proxies]},
+            {"name": "🎯 全球均衡", "type": "load-balance", "url": "http://www.gstatic.com/generate_204", "interval": 300, "proxies": [p["name"] for p in proxies]},
+        ],
+        "rules": [
+            "DOMAIN-SUFFIX,google.com,🚀 节点选择",
+            "DOMAIN-SUFFIX,github.com,🚀 节点选择",
+            "DOMAIN-SUFFIX,telegram.org,🚀 节点选择",
+            "MATCH,🚀 节点选择"
+        ]
+    }
+
+    try:
+        with open(CLASH_OUTPUT_FILE, "w", encoding="utf-8") as f:
+            yaml.dump(config, f, allow_unicode=True, sort_keys=False)
+        log(f"[*] Clash 配置文件已生成: {CLASH_OUTPUT_FILE}")
+    except Exception as e:
+        log(f"[-] Clash 配置生成失败: {e}")
+
+
+
 # ============ 主处理函数 ============
 def process_site(row_num, name, url, panel_type_hint):
     session = create_session()
@@ -1584,79 +1701,89 @@ def main():
     stats = {"total": len(sites), "success": 0, "already_registered": 0,
              "cloudflare": 0, "failed": 0, "skipped": 0}
     all_plans_data = []
+    processed_count = 0
 
-    for i, site in enumerate(sites):
+    def task_wrapper(i, site):
+        nonlocal processed_count
         try:
             result = process_site(site["row"], site["name"], site["url"], site["panel_type"])
+            
+            with stats_lock:
+                # 写入 Excel
+                plan_summary = ""
+                if result.get("plans"):
+                    cheapest = min(result["plans"], key=lambda x: x["monthly_price"])
+                    plan_summary = f"最低{cheapest['monthly_price']}元/月 {cheapest['traffic_gb']}GB"
+                    all_plans_data.append({"site_name": result["name"], "plans": result["plans"]})
 
-            # 套餐概要
-            plan_summary = ""
-            if result.get("plans"):
-                cheapest = min(result["plans"], key=lambda x: x["monthly_price"])
-                plan_summary = f"最低{cheapest['monthly_price']}元/月 {cheapest['traffic_gb']}GB"
-                all_plans_data.append({"site_name": result["name"], "plans": result["plans"]})
+                out_ws.append([
+                    i + 1, result["name"], result["url"], result["status"],
+                    result["account"], result["password"],
+                    result["subscribe_url"], result["subscribe_domain"], result["note"],
+                    plan_summary,
+                ])
 
-            out_ws.append([
-                i + 1, result["name"], result["url"], result["status"],
-                result["account"], result["password"],
-                result["subscribe_url"], result["subscribe_domain"], result["note"],
-                plan_summary,
-            ])
+                status = result["status"]
+                if "注册成功" in status:
+                    stats["success"] += 1
+                elif "已注册" in status:
+                    stats["already_registered"] += 1
+                elif "Cloudflare" in status:
+                    stats["cloudflare"] += 1
+                elif "跳过" in status:
+                    stats["skipped"] += 1
+                else:
+                    stats["failed"] += 1
 
-            status = result["status"]
-            if "注册成功" in status:
-                stats["success"] += 1
-            elif "已注册" in status:
-                stats["already_registered"] += 1
-            elif "Cloudflare" in status:
-                stats["cloudflare"] += 1
-            elif "跳过" in status:
-                stats["skipped"] += 1
-            else:
-                stats["failed"] += 1
-
-            # ====== 数据库自动自我维护逻辑 ======
-            healthy_keywords = ["已注册", "注册成功", "Cloudflare", "人机验证", "关闭注册"]
-            if any(kw in status for kw in healthy_keywords):
-                site["fail_count"] = 0
-            else:
-                site["fail_count"] += 1
-            site["last_status"] = status
-            # ==================================
-
-            if (i + 1) % 10 == 0:
-                out_wb.save(OUTPUT_EXCEL)
-                log(f"\n--- 进度: {i+1}/{len(sites)} ---")
-                log(f"  成功: {stats['success']}, 已注册: {stats['already_registered']}, "
-                    f"CF拦截: {stats['cloudflare']}, 跳过: {stats['skipped']}, 失败: {stats['failed']}")
-
+                # 数据库状态维护
+                healthy_keywords = ["已注册", "注册成功", "Cloudflare", "人机验证", "关闭注册"]
+                if any(kw in status for kw in healthy_keywords):
+                    site["fail_count"] = 0
+                else:
+                    site["fail_count"] += 1
+                site["last_status"] = status
+                
+                processed_count += 1
+                if processed_count % 5 == 0:
+                    out_wb.save(OUTPUT_EXCEL)
+                    log(f"  [进度] 已处理: {processed_count}/{len(sites)} | 成功: {stats['success']} | 失败/跳过: {stats['failed'] + stats['skipped']}")
+            
+            return result.get("subscribe_url", "")
         except Exception as e:
-            log(f"  处理异常: {e}")
-            out_ws.append([i + 1, site["name"], site["url"], "异常", "", "", "", "", str(e)[:200]])
-            stats["failed"] += 1
-            site["fail_count"] += 1
-            site["last_status"] = "异常报错"
+            log(f"  线程处理异常: {e}")
+            return ""
 
-        time.sleep(DELAY_BETWEEN_SITES)
+    log(f"[*] 启动多线程引擎 (并发数: 8)...")
+    all_subscribe_urls = []
+    with ThreadPoolExecutor(max_workers=8) as executor:
+        futures = [executor.submit(task_wrapper, i, site) for i, site in enumerate(sites)]
+        for future in as_completed(futures):
+            url = future.result()
+            if url:
+                all_subscribe_urls.append(url)
 
     out_wb.save(OUTPUT_EXCEL)
-    # 同步把今天筛选测试过的全家桶存活数据存入主 DB
-    # 彻底去除已死掉的机场 (包括本次刚刚被探测出连不上的)
-    final_alive_sites = [s for s in sites if s.get("fail_count", 0) < 1]
+    
+    # 彻底清理死链并回写 CSV
+    final_alive_sites = [s for s in all_db_sites if s.get("fail_count", 0) < 1]
     save_sites_db(final_alive_sites)
-
-    # 生成套餐分析
+    
+    # 生成套餐报表
     generate_plan_analysis(all_plans_data)
+    
+    # 生成 Clash 订阅汇总配置
+    all_nodes_collected = ""
+    if os.path.exists(NODES_OUTPUT_FILE):
+        with open(NODES_OUTPUT_FILE, "r", encoding="utf-8") as f:
+            all_nodes_collected = f.read()
+    generate_clash_config(all_nodes_collected)
 
     log("\n" + "=" * 60)
-    log("处理完成!")
-    log(f"  总计: {stats['total']}")
-    log(f"  注册成功: {stats['success']}")
-    log(f"  已注册: {stats['already_registered']}")
-    log(f"  Cloudflare拦截: {stats['cloudflare']}")
-    log(f"  跳过: {stats['skipped']}")
-    log(f"  失败: {stats['failed']}")
-    log(f"结果已保存到: {OUTPUT_EXCEL}")
+    log("所有任务并发处理完成!")
+    log(f"  总计规模: {stats['total']}")
+    log(f"  注册/获取成功: {stats['success'] + stats['already_registered']}")
+    log(f"  存活数据库已精简至: {len(final_alive_sites)} 个站点")
+    log(f"  最终成品: {OUTPUT_EXCEL}, {CLASH_OUTPUT_FILE}")
     log("=" * 60)
 
 
