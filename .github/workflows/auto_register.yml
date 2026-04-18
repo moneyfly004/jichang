@@ -1,0 +1,74 @@
+name: "日常机场探测与注册任务"
+
+on:
+  schedule:
+    # 每天凌晨两点 (UTC+8 即对应 UTC 18:00) 自动触发
+    - cron: '0 18 * * *'
+  workflow_dispatch: # 允许在 GitHub 网页手动点击触发运行
+
+jobs:
+  batch-register:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+          cache: 'pip' # 缓存 pip 依赖包以加速后续运行
+          
+      - name: Install Dependencies
+        run: pip install -r requirements.txt
+        
+      - name: Check Input Excel
+        # 确保包含种子域名的表格在仓库根目录
+        run: |
+          if [ -f "doc_85b68efca457_guatizi_订阅域名汇总.xlsx" ]; then
+            echo "✅ 成功找到基础域名库 Excel"
+          else
+            echo "❌ 未找到基础域名库，请确保它存在于代码仓库根目录"
+            exit 1
+          fi
+          
+      - name: Run Auto Registration Script
+        env:
+          # 以下变量请在你的 GitHub Repo -> Settings -> Secrets 中添加
+          REG_EMAIL: ${{ secrets.REG_EMAIL }}
+          REG_PASSWORD: ${{ secrets.REG_PASSWORD }}
+          IMAP_EMAIL: ${{ secrets.IMAP_EMAIL }}
+          IMAP_PASSWORD: ${{ secrets.IMAP_PASSWORD }}
+          
+          # 重定向生成文件的挂载点
+          EXCEL_PATH: "./doc_85b68efca457_guatizi_订阅域名汇总.xlsx"
+          OUTPUT_EXCEL: "./注册结果.xlsx"
+          LOG_FILE: "./register_log.txt"
+          NODES_OUTPUT_FILE: "./all_nodes.txt"
+        run: python batch_register.py
+        
+      - name: Commit and Push Results
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add 注册结果.xlsx 套餐分析.xlsx register_log.txt all_nodes.txt || true
+          # 仅在有改动时才提交
+          if ! git diff --staged --quiet; then
+            git commit -m "Auto-update: Registration results and nodes [skip ci]"
+            git push
+          else
+            echo "没有文件变动，跳过提交"
+          fi
+
+      - name: Upload Artifacts (注册结果及节点提取)
+        if: always() # 无论成功与否，只要产生文件就捕获上传
+        uses: actions/upload-artifact@v4
+        with:
+          name: Auto-Register-Results
+          path: |
+            注册结果.xlsx
+            套餐分析.xlsx
+            register_log.txt
+            all_nodes.txt
+          retention-days: 7
